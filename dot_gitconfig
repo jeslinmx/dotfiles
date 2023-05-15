@@ -1,3 +1,5 @@
 [user]
 	name = Jeshua Lin
 	email = jeslinmx@users.noreply.github.com
+[alias]
+	adog = log --all --decorate --oneline --graph
