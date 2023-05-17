@@ -1,0 +1,5 @@
+{{ if .headless }}
+.local/share/fonts/**
+.config/kitty
+.config/keepassxc
+{{ end }}
