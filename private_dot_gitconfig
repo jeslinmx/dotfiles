@@ -4,12 +4,13 @@
 [alias]
 	adog = log --all --decorate --oneline --graph
 	s = status
+	d = diff
+	a = add
 	c = commit
 	ca = commit -am
 	b = branch
+	co = checkout
 	f = fetch
-	u = push
-	d = pull
 	l = log
 	uns = restore --staged
 	r = rebase
