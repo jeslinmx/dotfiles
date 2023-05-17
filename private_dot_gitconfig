@@ -1,0 +1,16 @@
+[user]
+	name = Jeshua Lin
+	email = jeslinmx@users.noreply.github.com
+[alias]
+	adog = log --all --decorate --oneline --graph
+	s = status
+	c = commit
+	ca = commit -am
+	b = branch
+	f = fetch
+	u = push
+	d = pull
+	l = log
+	uns = restore --staged
+	r = rebase
+	m = merge
