@@ -1,0 +1,13 @@
+format: yaml
+progress: true
+umask: {{if eq .chezmoi.os "android"}} 0o077 {{else}} 0o022 {{end}}
+
+add:
+  templateSymlinks: true
+edit:
+  apply: true
+git:
+  autoAdd: true
+  autoCommit: true
+  autoPush: true
+
