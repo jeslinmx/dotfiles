@@ -2,6 +2,8 @@
 .local/share/fonts/**
 .config/kitty
 .config/keepassxc
+{{ else }}
+.ssh/authorized_keys
 {{ end }}
 
 {{ if ne .chezmoi.os "android" }}
