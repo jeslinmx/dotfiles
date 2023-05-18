@@ -5,6 +5,7 @@ symbol = ' '
 style = 'dimmed white'
 
 [battery]
+disabled = {{ eq .chezmoi.os "android" }}
 format = '[ $symbol $percentage ]($style)'
 full_symbol = '󰁹 '
 charging_symbol = '󰂄 '
