@@ -4,8 +4,8 @@ format = '$fill[* * *   $status   * * *](dimmed white)$fill$line_break $all$fill
 symbol = ' '
 style = 'dimmed white'
 
+{{ if ne .chezmoi.os "android" }}
 [battery]
-disabled = {{ eq .chezmoi.os "android" }}
 format = '[ $symbol $percentage ]($style)'
 full_symbol = '󰁹 '
 charging_symbol = '󰂄 '
@@ -24,6 +24,7 @@ style = 'yellow'
 [[battery.display]]
 threshold = 15
 style = 'red'
+{{ end }}
 
 [cmd_duration]
 min_time = 5000
