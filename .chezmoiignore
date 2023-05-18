@@ -8,4 +8,5 @@
 
 {{ if ne .chezmoi.os "android" }}
 .termux
+.hushlogin
 {{ end }}
