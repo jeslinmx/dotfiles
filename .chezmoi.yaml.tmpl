@@ -8,6 +8,6 @@ edit:
   apply: true
 
 data:
-  githubUsername: {{ promptStringOnce . "githubUsername" "GitHub username" "jeslinmx" }}
+  githubUsername: {{ promptStringOnce . "githubUsername" "GitHub username" .chezmoi.username }}
   headless: {{ promptBoolOnce . "headless" "Perform headless setup (no kitty, fonts, etc.)" false }}
 
