@@ -40,7 +40,7 @@
         "defaults": 
         {
             "bellStyle": "taskbar",
-            "colorScheme": "One Half Dark",
+            "colorScheme": "colors from chezmoi",
             "font": 
             {
                 "face": "CaskaydiaCove Nerd Font",
@@ -55,43 +55,65 @@
         "list": 
         [
             {
-                "guid": "{5fb123f1-af88-5b5c-8953-d14a8def1978}",
-                "hidden": false,
                 "name": "PowerShell 7",
-                "source": "Windows.Terminal.PowershellCore"
+                "guid": "{5fb123f1-af88-5b5c-8953-d14a8def1978}",
+                "source": "Windows.Terminal.PowershellCore",
+                "hidden": false
             },
             {
-                "colorScheme": "Campbell Powershell",
+                "name": "Windows PowerShell",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-                "hidden": false,
-                "name": "Windows PowerShell"
+                "colorScheme": "Campbell Powershell",
+                "hidden": false
             },
             {
-                "colorScheme": "Vintage",
+                "name": "Command Prompt",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "commandline": "%SystemRoot%\\System32\\cmd.exe",
                 "cursorShape": "vintage",
-                "experimental.retroTerminalEffect": false,
-                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-                "hidden": false,
-                "name": "Command Prompt"
+                "colorScheme": "Vintage",
+                "hidden": false
             },
             {
-                "colorScheme": "Ubuntu-ColorScheme",
+                "name": "Ubuntu",
                 "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
-                "hidden": false,
-                "name": "Ubuntu",
-                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
+                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc",
+                "colorScheme": "Ubuntu-ColorScheme",
+                "hidden": false
             },
             {
-                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-                "hidden": true,
                 "name": "Ubuntu",
-                "source": "Windows.Terminal.Wsl"
+                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "source": "Windows.Terminal.Wsl",
+                "hidden": true
             }
         ]
     },
     "schemes": 
     [
+        {
+            "name": "colors from chezmoi",
+            "background":    "{{ .colors.background }}",
+            "foreground":    "{{ .colors.foreground }}",
+            "black":         "{{ .colors.black }}",
+            "red":           "{{ .colors.red }}",
+            "green":         "{{ .colors.green }}",
+            "yellow":        "{{ .colors.yellow }}",
+            "blue":          "{{ .colors.blue }}",
+            "purple":        "{{ .colors.magenta }}",
+            "cyan":          "{{ .colors.cyan }}",
+            "white":         "{{ .colors.white }}",
+            "brightBlack":   "{{ .colors.brightBlack }}",
+            "brightRed":     "{{ .colors.brightRed }}",
+            "brightGreen":   "{{ .colors.brightGreen }}",
+            "brightYellow":  "{{ .colors.brightYellow }}",
+            "brightBlue":    "{{ .colors.brightBlue }}",
+            "brightPurple":  "{{ .colors.brightMagenta }}",
+            "brightCyan":    "{{ .colors.brightCyan }}",
+            "brightWhite":   "{{ .colors.brightWhite }}",
+            "cursorColor": "#FFFFFF",
+            "selectionBackground": "#FFFFFF"
+        },
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",
@@ -323,7 +345,7 @@
             "yellow": "#808000"
         }
     ],
-    "tabWidthMode": "titleLength",
+    "tabWidthMode": "equal",
     "themes": [],
     "useAcrylicInTabRow": true
 }
