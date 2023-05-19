@@ -1,4 +1,4 @@
-format = '$fill[* * *   $status   * * *](dimmed white)$fill$line_break $all$fill$jobs$cmd_duration$time$line_break $battery$username$hostname$hostip$container$shell$character'
+format = '$fill[* * *   $status   * * *](dimmed white)$fill$line_break $all$fill$jobs$cmd_duration$time$line_break $username$hostname$hostip$shell$character'
 
 [fill]
 symbol = ' '
@@ -6,24 +6,19 @@ style = 'dimmed white'
 
 {{ if ne .chezmoi.os "android" }}
 [battery]
-format = '[ $symbol $percentage ]($style)'
-full_symbol = '󰁹 '
-charging_symbol = '󰂄 '
-discharging_symbol = '󰁿 '
-unknown_symbol = '󰂑 '
-empty_symbol = '󰂎 '
+full_symbol = "󱟢 "
+charging_symbol = "󰂄 "
+discharging_symbol = "󰂌"
+unknown_symbol = "󰂑 "
+empty_symbol = "󱉞 "
 
+{{ range $threshold, $symbol := .battery.symbols }}
 [[battery.display]]
-threshold = 95
-style = 'green'
-
-[[battery.display]]
-threshold = 40
-style = 'yellow'
-
-[[battery.display]]
-threshold = 15
-style = 'red'
+discharging_symbol = '{{ index $symbol 0 }} '
+charging_symbol = '{{ index $symbol 1 }} '
+threshold = {{ $threshold }}
+style = '{{ index $.battery.colors (div (sub $threshold 1) (div 100 (len $.battery.colors))) }}'
+{{ end }}
 {{ end }}
 
 [character]
