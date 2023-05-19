@@ -34,3 +34,7 @@ color:
   - *color13
   - *color14
   - *color15
+
+aliases:
+  g: git
+  cm: chezmoi
