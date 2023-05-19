@@ -26,6 +26,9 @@ threshold = 15
 style = 'red'
 {{ end }}
 
+[character]
+disabled = true
+
 [cmd_duration]
 min_time = 5000
 format = '[  $duration ]($style)'
@@ -57,6 +60,18 @@ disabled = false
 conflicted = "≠"
 renamed = "Δ"
 deleted = "×"
+
+[shell]
+disabled = false
+bash_indicator = "󱆃"
+fish_indicator = "󰈺"
+zsh_indicator = "Z"
+powershell_indicator = "󰨊"
+xonsh_indicator = ""
+cmd_indicator = ""
+nu_indicator = "𝜈"
+unknown_indicator = "#?"
+format = "[$indicator]($style)❯ "
 
 [status]
 disabled = false
