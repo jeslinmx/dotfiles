@@ -1,0 +1,10 @@
+{{ if ge .manageBin 1 }}
+".local/bin/starship":
+  type: file
+  executable: true
+  refreshPeriod: 168h
+  url: "https://github.com/starship/starship/releases/latest/download/starship-{{index .starship.arch .chezmoi.arch}}-{{index .starship.os .chezmoi.os}}.tar.gz"
+  filter:
+    command: tar
+    args: ["--extract", "--gzip", "--file", "/dev/stdin", "--to-stdout"]
+{{ end }} 
