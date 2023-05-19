@@ -1,9 +1,9 @@
 background_opacity 0.9
-background "{{ .colors.background }}"
-foreground "{{ .colors.foreground }}"
+background {{ .colors.background }}
+foreground {{ .colors.foreground }}
 selection_foreground none
 selection_background none
 
 {{ range $i, $color := .color -}}
-color{{ $i }} "{{ $color }}"
+color{{ $i }} {{ $color }}
 {{ end -}}
