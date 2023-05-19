@@ -10,3 +10,7 @@
 .termux
 .hushlogin
 {{ end }}
+
+{{ if ne .chezmoi.os "windows" }}
+appdata
+{{ end }}
