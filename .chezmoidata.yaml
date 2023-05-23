@@ -38,6 +38,9 @@ color:
 aliases:
   g: git
   cm: chezmoi
+  vi: toolbox run nvim
+  vim: toolbox run nvim
+  nvim: toolbox run nvim
 
 battery:
   symbols:
