@@ -1,0 +1,28 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# path
+if ! [[ "$PATH" =~ "$HOME/.local/bin" ]]
+then
+    PATH="$HOME/.local/bin"
+fi
+export PATH
+
+# aliases
+{{- range $a, $alias := .aliases }}
+alias {{ $a }}="{{ $alias }}"
+{{- end }}
+
+# environment variables
+{{- range $var, $val := .env }}
+export {{ $var }}={{ $val }}
+{{- end }}
+
+HISTTIMEFORMAT="%F %T "
+HISTCONTROL=ignoredups
+
+eval "$(starship init bash)"

@@ -1,0 +1,16 @@
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+
+    # Aliases
+    {{- range $a, $alias := .aliases }}
+    abbr -a {{ $a }} {{ $alias }}
+    {{- end }}
+
+    # Environment variables
+    {{- range $var, $val := .env }}
+    set -gx {{ $var }} {{ $val }}
+    {{- end }}
+
+    # Starship prompt
+    starship init fish | source
+end
