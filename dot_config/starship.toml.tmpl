@@ -1,8 +1,19 @@
-format = '$fill[* * *   $status   * * *](dimmed white)$fill$line_break$all$fill$jobs$cmd_duration$time$line_break$username$hostname$hostip$shell$character'
+format = """\
+($fill$cmd_duration$fill$line_break$line_break)\
+$time$jobs$battery$memory_usage$env_var$custom\
+(/ $username(@$hostname:)$directory$sudo)\
+(/ $fossil_branch$git_branch$git_commit$git_state$git_metrics$git_status$hg_branch$pijul_channel$vcsh)\
+(/ $aws$azure$gcloud$openstack)\
+(/ $container$singularity)\
+(/ $conda$guix_shell$meson$nix_shell$spack$package)\
+(/ $docker_context$kubernetes$helm$buf$bun$cmake$gradle)\
+(/ $all)\
+$line_break\
+$shlvl$shell$character\
+"""
 
 [fill]
 symbol = ' '
-style = 'dimmed white'
 
 {{ if ne .chezmoi.os "android" }}
 [battery]
@@ -22,31 +33,21 @@ style = '{{ index $.battery.colors (div (sub $threshold 1) (div 100 (len $.batte
 {{ end }}
 
 [character]
-disabled = true
+success_symbol = '[❭](bold green)'
+error_symbol = '[❭](bold red)'
+vimcmd_symbol = '[❬](bold green)'
+vimcmd_replace_one_symbol = '[❬](bold purple)'
+vimcmd_replace_symbol = '[❬](bold purple)'
+vimcmd_visual_symbol = '[❬](bold cyan)'
 
 [cmd_duration]
-min_time = 5000
-format = '[  $duration ]($style)'
-style = 'inverted yellow'
+min_time = 0
+format = '[<<=====/](dimmed white) [$duration]($style) [/=====>>](dimmed white)'
 
 [directory]
 truncation_length = 0
 truncation_symbol = '…/'
 read_only = ' 󰏯 '
-
-[directory.substitutions]
-'/boot' = '/🥾'
-'/lib' = '/📚'
-'/log' = '/🪵'
-'/run' = '/🏃'
-'/Documents' = '/󱔗'
-'/Downloads' = '/'
-'/Music' = '/󰈣'
-'/Pictures' = '/'
-'/.config' = '/⚙'
-
-[git_branch]
-symbol = " "
 
 [git_metrics]
 disabled = false
@@ -55,6 +56,11 @@ disabled = false
 conflicted = "≠"
 renamed = "Δ"
 deleted = "×"
+
+[hostname]
+ssh_symbol = ''
+trim_at = ''
+format = '[$ssh_symbol$hostname]($style)'
 
 [shell]
 disabled = false
@@ -66,10 +72,16 @@ xonsh_indicator = ""
 cmd_indicator = ""
 nu_indicator = "𝜈"
 unknown_indicator = "#?"
-format = "[$indicator]($style) ❭ "
+
+[shlvl]
+symbol = '❬'
+format = '[$symbol]($style)'
+repeat = true
+threshold = 1
+style = 'bold dimmed white'
+disabled = false
 
 [status]
-disabled = false
 format = '[$symbol]($style)'
 style = 'dimmed white'
 symbol = '[‼](dimmed yellow)'
@@ -84,10 +96,9 @@ pipestatus = true
 pipestatus_format = '[$pipestatus => $symbol]($style)'
 pipestatus_separator = '[ | ](dimmed white)'
 
-[sudo]
-disabled = false
-
 [time]
 disabled = false
-format = '[  $time ]($style)'
-style = 'inverted blue'
+format = '[$time]($style) '
+
+[username]
+format = '[$user]($style)'
