@@ -10,8 +10,33 @@
 	ca = commit -am
 	b = branch
 	co = checkout
+	sw = switch
 	f = fetch
 	l = log
-	uns = restore --staged
-	r = rebase
+	unstage = restore --staged
+	r = restore
 	m = merge
+	st = stash
+[color]
+	ui = auto
+[init]
+	defaultBranch = main
+[diff]
+	mnemonicPrefix = true
+	renames = true
+	submodule = log
+[grep]
+	break = true
+	heading = true
+	lineNumber = true
+	extendedRegexp = true
+[status]
+	submoduleSummary = true
+	showUntrackedFiles = all
+[tag]
+	sort = version:refname
+
+[url "https://github.com/"]
+        insteadOf = gh:
+[url "https://gist.github.com/"]
+        insteadOf = gist:
