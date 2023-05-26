@@ -1,6 +1,11 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
 
+    fish_vi_key_bindings
+    set fish_cursor_visual block
+    set fish_cursor_insert line
+    set fish_cursor_replace_one underscore
+
     # Aliases
     {{- range $a, $alias := .aliases }}
     abbr -a {{ $a }} {{ $alias }}
@@ -10,6 +15,11 @@ if status is-interactive
     {{- range $var, $val := .env }}
     set -gx {{ $var }} {{ $val }}
     {{- end }}
+
+    # Greeting
+    if [ $SHLVL -gt 1 ]
+        set fish_greeting ''
+    end
 
     # Starship prompt
     starship init fish | source
