@@ -10,5 +10,5 @@ edit:
 data:
   githubUsername: {{ promptStringOnce . "githubUsername" "GitHub username" .chezmoi.username }}
   headless: {{ promptBoolOnce . "headless" "Perform headless setup (no kitty, fonts, etc.)" false }}
-  manageBin: {{ promptIntOnce . "manageBin" "Manage local bin? 0=no, 1=essentials (starship), 2=extras" 1 }}
+  manageBin: {{ promptBoolOnce . "manageBin" "Manage local bin" true }}
 
