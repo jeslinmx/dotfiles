@@ -5,6 +5,7 @@ aliases:
   cm: chezmoi
   vi: nvim
   vim: nvim
+  fetch: neofetch --config ~/.config/neofetch/simple.conf
 
 env:
   EDITOR: nvim

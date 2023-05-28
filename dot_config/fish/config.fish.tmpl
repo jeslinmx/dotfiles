@@ -16,6 +16,10 @@ if status is-interactive
     # Greeting
     if [ $SHLVL -gt 1 ]
         set fish_greeting ''
+    else
+        function fish_greeting
+	    echo $(neofetch --config ~/.config/neofetch/simple.conf)
+        end
     end
 
     fish_vi_key_bindings
