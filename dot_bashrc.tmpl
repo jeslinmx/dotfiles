@@ -22,6 +22,12 @@ alias {{ $a }}="{{ $alias }}"
 export {{ $var }}="{{ $val }}"
 {{- end }}
 
+# greeting
+if [[ $SHLVL -eq 1 ]]
+then
+    neofetch --config ~/.config/neofetch/simple.conf
+fi
+
 HISTTIMEFORMAT="%F %T "
 HISTCONTROL=ignoredups
 
