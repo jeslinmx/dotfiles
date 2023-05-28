@@ -30,6 +30,8 @@
 	heading = true
 	lineNumber = true
 	extendedRegexp = true
+[pull]
+	ff = only
 [status]
 	submoduleSummary = true
 	showUntrackedFiles = all
