@@ -43,7 +43,7 @@ aliases:
 
 env:
   EDITOR: nvim
-  PAGER: less
+  PAGER: less -R
 
 battery:
   symbols:
