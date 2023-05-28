@@ -19,7 +19,7 @@ alias {{ $a }}="{{ $alias }}"
 
 # environment variables
 {{- range $var, $val := .env }}
-export {{ $var }}={{ $val }}
+export {{ $var }}="{{ $val }}"
 {{- end }}
 
 HISTTIMEFORMAT="%F %T "
