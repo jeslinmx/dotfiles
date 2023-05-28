@@ -3,7 +3,7 @@
   type: file
   executable: true
   refreshPeriod: 168h
-  url: "https://github.com/starship/starship/releases/latest/download/starship-{{index .starship.arch .chezmoi.arch}}-{{index .starship.os .chezmoi.os}}.tar.gz"
+  url: "https://github.com/starship/starship/releases/latest/download/starship-{{index .bin.starship.arch .chezmoi.arch}}-{{index .bin.starship.os .chezmoi.os}}.tar.gz"
   filter:
     command: tar
     args: ["--extract", "--gzip", "--file", "/dev/stdin", "--to-stdout"]

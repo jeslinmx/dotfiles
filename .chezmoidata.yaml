@@ -1,39 +1,4 @@
-colors:
-  background:    &background '#1d1f21'
-  foreground:    &foreground '#c5c8c6'
-  black:         &color0     '#282a2e'
-  red:           &color1     '#a54242'
-  green:         &color2     '#8c9440'
-  yellow:        &color3     '#de935f'
-  blue:          &color4     '#5f819d'
-  magenta:       &color5     '#85678f'
-  cyan:          &color6     '#5e8d87'
-  white:         &color7     '#707880'
-  brightBlack:   &color8     '#373b41'
-  brightRed:     &color9     '#cc6666'
-  brightGreen:   &color10    '#b5bd68'
-  brightYellow:  &color11    '#f0c674'
-  brightBlue:    &color12    '#81a2be'
-  brightMagenta: &color13    '#b294bb'
-  brightCyan:    &color14    '#8abeb7'
-  brightWhite:   &color15    '#c5c8c6'
-color:
-  - *color0
-  - *color1
-  - *color2
-  - *color3
-  - *color4
-  - *color5
-  - *color6
-  - *color7
-  - *color8
-  - *color9
-  - *color10
-  - *color11
-  - *color12
-  - *color13
-  - *color14
-  - *color15
+### COMMON SHELL CONFIG ###
 
 aliases:
   g: git
@@ -44,6 +9,48 @@ aliases:
 env:
   EDITOR: nvim
   PAGER: less -R
+
+### COLOR SCHEME ###
+
+colors:
+  background:    &background    '#1d1f21'
+  foreground:    &foreground    '#c5c8c6'
+  black:         &black         '#282a2e'
+  red:           &red           '#a54242'
+  green:         &green         '#8c9440'
+  yellow:        &yellow        '#de935f'
+  blue:          &blue          '#5f819d'
+  magenta:       &magenta       '#85678f'
+  cyan:          &cyan          '#5e8d87'
+  white:         &white         '#707880'
+  brightBlack:   &brightBlack   '#373b41'
+  brightRed:     &brightRed     '#cc6666'
+  brightGreen:   &brightGreen   '#b5bd68'
+  brightYellow:  &brightYellow  '#f0c674'
+  brightBlue:    &brightBlue    '#81a2be'
+  brightMagenta: &brightMagenta '#b294bb'
+  brightCyan:    &brightCyan    '#8abeb7'
+  brightWhite:   &brightWhite   '#c5c8c6'
+
+color:
+  - *black
+  - *red
+  - *green
+  - *yellow
+  - *blue
+  - *magenta
+  - *cyan
+  - *white
+  - *brightBlack
+  - *brightRed
+  - *brightGreen
+  - *brightYellow
+  - *brightBlue
+  - *brightMagenta
+  - *brightCyan
+  - *brightWhite
+
+### STARSHIP HELPER VARS ###
 
 battery:
   symbols:
@@ -64,14 +71,17 @@ battery:
     - green
     - bright-green
 
-starship:
-  arch:
-    arm64: aarch64
-    arm: arm
-    386: i686
-    amd64: x86_64
-  os:
-    darwin: apple-darwin
-    windows: pc-windows-msvc
-    linux: unknown-linux-gnu
-    android: unknown-linux-musl
+### LOCAL BIN HELPER VARS ###
+
+bin:
+  starship:
+    arch:
+      arm64: aarch64
+      arm: arm
+      386: i686
+      amd64: x86_64
+    os:
+      darwin: apple-darwin
+      windows: pc-windows-msvc
+      linux: unknown-linux-gnu
+      android: unknown-linux-musl
