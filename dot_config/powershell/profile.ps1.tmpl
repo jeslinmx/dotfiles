@@ -1,4 +1,4 @@
-$env:PATH += ";$env:USERPROFILE\.local\bin"
+$env:PATH = "$env:USERPROFILE\.local\bin;$env:PATH"
 
 # aliases
 {{- range $a, $alias := .aliases }}
