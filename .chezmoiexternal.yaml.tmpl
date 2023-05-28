@@ -7,4 +7,13 @@
   filter:
     command: tar
     args: ["--extract", "--gzip", "--file", "/dev/stdin", "--to-stdout"]
+
+".local/bin/neofetch":
+  type: file
+  executable: true
+  refreshPeriod: 168h
+  url: "https://api.github.com/repos/dylanaraps/neofetch/tarball/7.1.0"
+  filter:
+    command: tar
+    args: ["--extract", "--gzip", "--file", "/dev/stdin", "--to-stdout", "dylanaraps-neofetch*/neofetch"]
 {{ end }} 
