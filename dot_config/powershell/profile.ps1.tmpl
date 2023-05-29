@@ -2,7 +2,7 @@ $env:PATH = "$env:USERPROFILE\.local\bin;$env:PATH"
 
 # aliases
 {{- range $a, $alias := .aliases }}
-Set-Alias -Name {{ $a }} -Value {{ $alias }}
+Set-Alias -Name {{ $a }} -Value "{{ $alias }}"
 {{- end }}
 
 # environment variables
