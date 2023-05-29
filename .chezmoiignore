@@ -2,7 +2,9 @@
 .local/share/fonts/**
 .config/kitty
 .config/keepassxc
-{{ else }}
+{{ end }}
+
+{{ if not .authorizedKeys }}
 .ssh/authorized_keys
 {{ end }}
 

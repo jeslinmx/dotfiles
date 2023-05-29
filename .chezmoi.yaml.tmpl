@@ -10,5 +10,6 @@ edit:
 data:
   githubUsername: {{ promptStringOnce . "githubUsername" "GitHub username" .chezmoi.username }}
   headless: {{ promptBoolOnce . "headless" "Perform headless setup (no kitty, fonts, etc.)" false }}
+  authorizedKeys: {{ promptBoolOnce . "authorizedKeys" "Manage SSH authorized_keys" true }}
   manageBin: {{ promptBoolOnce . "manageBin" "Manage local bin" true }}
 
