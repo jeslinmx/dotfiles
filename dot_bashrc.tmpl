@@ -5,6 +5,9 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+# If not running interactively (e.g. when called by scp), don't do anything
+[[ $- != *i* ]] && return
+
 # path
 if ! [[ "$PATH" =~ "$HOME/.local/bin" ]]
 then
