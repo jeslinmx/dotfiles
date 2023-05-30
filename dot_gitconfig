@@ -17,6 +17,7 @@
 	r = restore
 	m = merge
 	st = stash
+	ra = remote add
 [color]
 	ui = auto
 [init]
@@ -42,3 +43,5 @@
         insteadOf = gh:
 [url "https://gist.github.com/"]
         insteadOf = gist:
+[url "git@github.com:"]
+	insteadOf = ghssh:
