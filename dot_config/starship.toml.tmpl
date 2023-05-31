@@ -1,7 +1,7 @@
 format = """\
 ($fill$cmd_duration$fill$line_break$line_break)\
 $time$jobs$battery$memory_usage$env_var$custom\
-(// $username(@$hostname:)$directory$sudo)\
+(// $username(@$hostname:)$directory$sudo${custom.ssh_agent})\
 (// $fossil_branch$git_branch$git_commit$git_state$git_metrics$git_status$hg_branch$pijul_channel$vcsh)\
 (// $aws$azure$gcloud$openstack)\
 (// $container$singularity)\
@@ -102,3 +102,9 @@ format = '[$time]($style) '
 
 [username]
 format = '[$user]($style)'
+
+[custom.ssh_agent]
+description = "Number of keys in SSH agent"
+when = "ssh-add -l"
+command = "ssh-add -l | wc -l"
+symbol = "󰌆 "
