@@ -40,8 +40,8 @@
 	sort = version:refname
 
 [url "https://github.com/"]
-        insteadOf = gh:
+        insteadOf = gh//
 [url "https://gist.github.com/"]
-        insteadOf = gist:
+        insteadOf = gist//
 [url "git@github.com:"]
-	insteadOf = ghssh:
+	insteadOf = gh:
