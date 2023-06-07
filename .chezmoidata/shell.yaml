@@ -1,0 +1,12 @@
+### COMMON SHELL CONFIG ###
+
+aliases:
+  g: git
+  cm: chezmoi
+  vi: nvim
+  vim: nvim
+  fetch: neofetch --config ~/.config/neofetch/simple.conf
+
+env:
+  EDITOR: nvim
+  PAGER: less -R
