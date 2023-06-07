@@ -86,3 +86,8 @@ bin:
       windows: pc-windows-msvc
       linux: unknown-linux-gnu
       android: unknown-linux-musl
+    format:
+      darwin: tar.gz
+      windows: zip
+      linux: tar.gz
+      android: tar.gz
