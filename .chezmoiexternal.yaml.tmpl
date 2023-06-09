@@ -3,14 +3,10 @@
   type: file
   executable: true
   refreshPeriod: 168h
-  url: "https://github.com/starship/starship/releases/latest/download/starship-{{index .bin.starship.arch .chezmoi.arch}}-{{index .bin.starship.os .chezmoi.os}}.{{index .bin.starship.format .chezmoi.os}}"
+  url: "https://github.com/starship/starship/releases/latest/download/starship-{{index .bin.starship.arch .chezmoi.arch}}-{{index .bin.starship.os .chezmoi.os}}.tar.gz"
   filter:
-    {{ if eq "zip" (index .bin.starship.format .chezmoi.os) }}
-    command: unzip
-    {{ else }}
     command: tar.gz
     args: ["--extract", "--gzip", "--file", "/dev/stdin", "--to-stdout"]
-    {{ end }}
 
 ".local/bin/neofetch":
   type: file

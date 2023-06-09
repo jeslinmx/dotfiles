@@ -83,11 +83,5 @@ bin:
       amd64: x86_64
     os:
       darwin: apple-darwin
-      windows: pc-windows-msvc
       linux: unknown-linux-gnu
       android: unknown-linux-musl
-    format:
-      darwin: tar.gz
-      windows: zip
-      linux: tar.gz
-      android: tar.gz
