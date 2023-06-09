@@ -5,7 +5,7 @@
   refreshPeriod: 168h
   url: "https://github.com/starship/starship/releases/latest/download/starship-{{index .bin.starship.arch .chezmoi.arch}}-{{index .bin.starship.os .chezmoi.os}}.tar.gz"
   filter:
-    command: tar.gz
+    command: tar
     args: ["--extract", "--gzip", "--file", "/dev/stdin", "--to-stdout"]
 
 ".local/bin/neofetch":
