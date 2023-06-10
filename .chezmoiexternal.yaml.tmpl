@@ -16,4 +16,10 @@
   filter:
     command: tar
     args: ["--extract", "--gzip", "--file", "/dev/stdin", "--to-stdout", "--wildcards", "dylanaraps-neofetch*/neofetch"]
+
+".local/bin/cloudflared":
+  type: file
+  executable: true
+  refreshPeriod: 168h
+  url: "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-{{.chezmoi.os}}-{{.chezmoi.arch}}"
 {{ end }} 
