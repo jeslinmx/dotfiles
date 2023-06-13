@@ -22,4 +22,13 @@
   executable: true
   refreshPeriod: 168h
   url: "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-{{.chezmoi.os}}-{{.chezmoi.arch}}"
+
+".local/bin/rg":
+  type: file
+  executable: true
+  refreshPeriod: 168h
+  url: "https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep-13.0.0-{{index .bin.ripgrep.arch .chezmoi.arch}}-{{index .bin.ripgrep.os .chezmoi.os}}.tar.gz"
+  filter:
+    command: tar
+    args: ["--extract", "--gzip", "--file", "/dev/stdin", "--to-stdout", "--wildcards", "ripgrep-*/rg"]
 {{ end }} 

@@ -85,3 +85,13 @@ bin:
       darwin: apple-darwin
       linux: unknown-linux-gnu
       android: unknown-linux-musl
+  ripgrep:
+    arch:
+      arm: arm
+      arm64: arm
+      386: i686
+      amd64: x86_64
+    os:
+      darwin: apple-darwin
+      linux: unknown-linux-musl
+      android: unknown-linux-gnueabihf
