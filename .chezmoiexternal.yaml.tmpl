@@ -28,7 +28,7 @@
   type: file
   executable: true
   refreshPeriod: 168h
-  url: "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-{{.chezmoi.os}}-{{.chezmoi.arch}}"
+  url: "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-{{if eq .chezmoi.os "android"}}linux{{else}}{{.chezmoi.os}}{{end}}-{{.chezmoi.arch}}"
 
 ".local/bin/rg":
   type: file
