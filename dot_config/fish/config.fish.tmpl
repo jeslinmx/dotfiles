@@ -1,32 +1,5 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
-
-    fish_add_path -p ~/.local/bin
-
-    # Aliases
-    {{- range $a, $alias := .aliases }}
-    abbr -a {{ $a }} {{ $alias }}
-    {{- end }}
-
-    # Environment variables
-    {{- range $var, $val := .env }}
-    set -gx {{ $var }} {{ $val }}
-    {{- end }}
-
-    # Greeting
-    if [ $SHLVL -eq 1 ]
-        function fish_greeting
-	    neofetch --config ~/.config/neofetch/simple.conf
-        end
-    else
-        set fish_greeting ''
+    for file in ~/.config/fish/config.d/*.fish
+        source $file
     end
-
-    fish_vi_key_bindings
-    set fish_cursor_visual block
-    set fish_cursor_insert line
-    set fish_cursor_replace_one underscore
-
-    # Starship prompt
-    starship init fish | source
 end
