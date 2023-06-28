@@ -22,3 +22,9 @@ bin:
       darwin: apple-darwin
       linux: unknown-linux-musl
       android: unknown-linux-gnueabihf
+  fzf:
+    os:
+      darwin: darwin
+      linux: linux
+      android: linux
+

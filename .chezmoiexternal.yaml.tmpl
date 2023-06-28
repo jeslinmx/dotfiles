@@ -38,4 +38,13 @@
   filter:
     command: tar
     args: ["--extract", "--gzip", "--file", "/dev/stdin", "--to-stdout", "--wildcards", "ripgrep-*/rg"]
+
+".local/bin/fzf":
+  type: file
+  executable: true
+  refreshPeriod: 168h
+  url: "https://github.com/junegunn/fzf/releases/download/0.42.0/fzf-0.42.0-{{index .bin.fzf.os .chezmoi.os}}_{{.chezmoi.arch}}.tar.gz"
+  filter:
+    command: tar
+    args: ["--extract", "--gzip", "--file", "/dev/stdin", "--to-stdout"]
 {{ end }} 
