@@ -1,55 +1,22 @@
+---@type NvPluginSpec[]
 local plugins = {
-  "nvim-treesitter/nvim-treesitter",
-  opts = {
-    ensure_installed = {
-      "bash",
-      "bibtex",
-      "c",
-      "cmake",
-      "comment",
-      "commonlisp",
-      "cpp",
-      "css",
-      "diff",
-      "dockerfile",
-      "dot",
-      "fish",
-      "git_config",
-      "git_rebase",
-      "gitattributes",
-      "gitcommit",
-      "gitignore",
-      "go",
-      "hcl",
-      "html",
-      "http",
-      "ini",
-      "java",
-      "javascript",
-      "jq",
-      "json",
-      "lua",
-      "make",
-      "markdown_inline",
-      "matlab",
-      "passwd",
-      "perl",
-      "php",
-      "python",
-      "r",
-      "regex",
-      "ruby",
-      "rust",
-      "scss",
-      "terraform",
-      "todotxt",
-      "toml",
-      "typescript",
-      "vhs",
-      "vim",
-      "yaml"
-    }
-  }
+
+  -- override plugin configs
+  require "custom.plugins.nvim-treesitter",
+  require "custom.plugins.nvim-tree",
+  require "custom.plugins.mason",
+
+  -- additional plugins
+  require "custom.plugins.better-escape",
+  require "custom.plugins.cinnamon",
+  require "custom.plugins.diffview",
+  require "custom.plugins.hardtime",
+  require "custom.plugins.leap",
+  require "custom.plugins.mkdir",
+  require "custom.plugins.symbols-outline",
+  require "custom.plugins.trouble",
+  require "custom.plugins.vim-illuminate",
+
 }
 
 return plugins
