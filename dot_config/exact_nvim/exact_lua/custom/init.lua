@@ -20,5 +20,3 @@ vim.opt.listchars:append({  -- set characters used to substitute whitespace
   precedes = "<",           -- indicator for left-side horizontal overflow
 })
 
-vim.opt.cursorline = true     -- highlight active line
-vim.opt.cursorcolumn = true   -- highlight active column
