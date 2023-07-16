@@ -12,11 +12,12 @@ vim.opt.so = 999              -- vertically centre cursor whenever possible
 vim.opt.wrap = false          -- disable line wrapping
 
 vim.opt.list = true           -- display non-space whitespace characters
-vim.opt.listchars:append({  -- set characters used to substitute whitespace
+vim.opt.listchars:append({    -- set characters used to substitute whitespace
   tab = "-->",
   trail = "·",
   nbsp = "⍽",
-  extends = ">",            -- indicator for right-side horizontal overflow
-  precedes = "<",           -- indicator for left-side horizontal overflow
+  extends = ">",              -- indicator for right-side horizontal overflow
+  precedes = "<",             -- indicator for left-side horizontal overflow
 })
 
+vim.opt.timeoutlen = 200      -- which-key pop-up delay
