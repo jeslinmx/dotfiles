@@ -5,6 +5,16 @@
   exact: true
   stripComponents: 1
 
+".termux/colors.properties":
+  type: file
+  url: "https://raw.githubusercontent.com/catppuccin/termux/main/Mocha/colors.properties"
+  refreshPeriod: 168h
+
+".config/kitty/kitty.conf.d/catppuccin-mocha.conf"
+  type: file
+  url: "https://raw.githubusercontent.com/catppuccin/kitty/main/themes/mocha.conf"
+  refreshPeriod: 168h
+
 {{ if .manageBin }}
 ".local/bin/starship":
   type: file
