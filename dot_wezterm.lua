@@ -38,7 +38,7 @@ c.font = wezterm.font_with_fallback {
   -- 'CozetteHiDpi',
   'CaskaydiaCove Nerd Font',
 }
-c.font_size = 8.3
+c.font_size = 10
 c.font_rules = {
   {
     intensity = 'Bold',
