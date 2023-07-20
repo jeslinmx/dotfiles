@@ -38,12 +38,14 @@
             "font": 
             {
                 "face": "CaskaydiaCove Nerd Font",
-                "size": 10,
+                "size": 10.0,
                 "weight": "normal"
             },
             "historySize": 20001,
+            "opacity": 100,
             "padding": "8",
-            "startingDirectory": "%USERPROFILE%"
+            "startingDirectory": "%USERPROFILE%",
+            "useAcrylic": false
         },
         "list": 
         [
@@ -407,83 +409,26 @@
         }
     ],
     "tabWidthMode": "equal",
-    "theme": "Catppuccin Mocha",
+    "theme": "Catppuccin Mocha Blue",
     "themes": 
     [
         {
-            "name": "Catppuccin Frappe",
+            "name": "Catppuccin Mocha Blue",
             "tab": 
             {
-                "background": "#303446FF",
-                "showCloseButton": "always",
-                "unfocusedBackground": null
+                "background": "#89B4FA20",
+                "showCloseButton": "hover",
+                "unfocusedBackground": "terminalBackground"
             },
             "tabRow": 
             {
-                "background": "#292C3CFF",
-                "unfocusedBackground": "#232634FF"
+                "background": "terminalBackground",
+                "unfocusedBackground": "terminalBackground"
             },
             "window": 
             {
                 "applicationTheme": "dark",
-                "useMica": false
-            }
-        },
-        {
-            "name": "Catppuccin Latte",
-            "tab": 
-            {
-                "background": "#EFF1F5FF",
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "tabRow": 
-            {
-                "background": "#E6E9EFFF",
-                "unfocusedBackground": "#DCE0E8FF"
-            },
-            "window": 
-            {
-                "applicationTheme": "light",
-                "useMica": false
-            }
-        },
-        {
-            "name": "Catppuccin Macchiato",
-            "tab": 
-            {
-                "background": "#24273AFF",
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "tabRow": 
-            {
-                "background": "#1E2030FF",
-                "unfocusedBackground": "#181926FF"
-            },
-            "window": 
-            {
-                "applicationTheme": "dark",
-                "useMica": false
-            }
-        },
-        {
-            "name": "Catppuccin Mocha",
-            "tab": 
-            {
-                "background": "#1E1E2EFF",
-                "showCloseButton": "always",
-                "unfocusedBackground": null
-            },
-            "tabRow": 
-            {
-                "background": "#181825FF",
-                "unfocusedBackground": "#11111BFF"
-            },
-            "window": 
-            {
-                "applicationTheme": "dark",
-                "useMica": false
+                "useMica": true
             }
         },
         {
