@@ -2,9 +2,9 @@
 local M = {}
 
 M.ui = {
-  theme = "onedark",
-  theme_toggle = { "onedark", "one_light" },
-  transparency = false,
+  theme = "catppuccin",
+  theme_toggle = { "catppuccin", "one_light" },
+  transparency = true,
 
   cmp = {
     style = "atom_colored",
