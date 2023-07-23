@@ -38,7 +38,7 @@ c.font = wezterm.font_with_fallback {
   -- 'CozetteHiDpi',
   'CaskaydiaCove Nerd Font',
 }
-c.font_size = 10
+c.font_size = 8.3
 c.font_rules = {
   {
     intensity = 'Bold',
@@ -65,6 +65,7 @@ c.font_rules = {
 c.use_fancy_tab_bar = false
 c.tab_max_width = 50
 c.switch_to_last_active_tab_when_closing_tab = true
+c.hide_tab_bar_if_only_one_tab = true
 
 -- PANES --
 
@@ -75,7 +76,7 @@ c.inactive_pane_hsb = {
 
 -- WINDOW --
 
-c.window_decorations = 'INTEGRATED_BUTTONS|RESIZE'
+c.window_decorations = 'RESIZE'
 c.tab_bar_style = {
   window_hide = ' - ',
   window_hide_hover = wezterm.format {
@@ -101,7 +102,7 @@ c.enable_scroll_bar = true
 -- OTHER --
 
 c.audible_bell = 'Disabled'
-c.automatically_reload_config = false
+c.automatically_reload_config = true
 
 -- and finally, return the configuration to wezterm
 return c
