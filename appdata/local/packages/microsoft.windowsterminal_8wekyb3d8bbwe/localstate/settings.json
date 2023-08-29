@@ -420,14 +420,14 @@
             "name": "Catppuccin Mocha Blue",
             "tab": 
             {
-                "background": "#89B4FA20",
+                "background": "terminalBackground",
                 "showCloseButton": "hover",
-                "unfocusedBackground": "terminalBackground"
+                "unfocusedBackground": "#181825"
             },
             "tabRow": 
             {
-                "background": "terminalBackground",
-                "unfocusedBackground": "terminalBackground"
+                "background": "#181825",
+                "unfocusedBackground": "#181825"
             },
             "window": 
             {
