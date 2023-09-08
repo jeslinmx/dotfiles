@@ -3,7 +3,7 @@
 aliases:
   g: git
   cm: chezmoi
-  vi: "command -v nvim >/dev/null && nvim || command -v vim >/dev/null && vim || command vi"
+  vi: nvim
   fetch: neofetch --config ~/.config/neofetch/simple.conf
 
 env:
