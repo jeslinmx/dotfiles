@@ -1,5 +1,5 @@
 {{ if not .graphical }}
-.local/share/fonts/**
+.local/share/fonts
 .config/kitty
 .config/keepassxc
 {{ end }}
