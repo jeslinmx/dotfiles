@@ -1,4 +1,4 @@
-{{ if .headless }}
+{{ if not .graphical }}
 .local/share/fonts/**
 .config/kitty
 .config/keepassxc
