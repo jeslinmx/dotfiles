@@ -1,0 +1,94 @@
+" Plugins
+call plug#begin()
+
+" Editing
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
+Plug 'markonm/traces.vim'
+Plug 'editorconfig/editorconfig-vim'
+
+" Editor visuals
+Plug 'gorodinskiy/vim-coloresque'
+Plug 'luochen1990/rainbow'
+Plug 'vim-scripts/Smooth-Scroll'
+
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+" UI
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'itchyny/lightline.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'liuchengxu/vim-which-key'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+Plug 'mhinz/vim-startify'
+
+call plug#end()
+
+colorscheme catppuccin_mocha
+
+" auto re-source .vimrc on change
+autocmd! BufWritePost $MYVIMRC source $MYVIMRC | echom "Reloaded $MYVIMRC"
+
+" auto resize windows when terminal is resized
+autocmd! VimResized * tabdo wincmd =
+
+set encoding=UTF-8
+" enable mouse support
+set mouse=a
+" disable the --MODE-- message below statusline
+set noshowmode
+" use 24-bit color
+set termguicolors
+" relative line numbers
+set relativenumber
+" make whitespace visible
+set list
+set listchars=trail:.,multispace:.,nbsp:⍽,tab:-->,precedes:<,extends:>
+
+let g:startify_custom_header = startify#center([
+	\ "           d8,              ",
+	\ "          `8P               ",
+	\ "                            ",
+	\ "?88   d8P  88b  88bd8b,d88b ",
+	\ "d88  d8P'  88P  88P'`?8P'?8b",
+	\ "?8b ,88'  d88  d88  d88  88P",
+	\ "`?888P'  d88' d88' d88'  88b",
+	\ ])
+let g:startify_custom_footer = startify#center(startify#fortune#cowsay())
+let g:startify_change_to_dir = 1
+let g:startify_change_to_vcs_root = 1
+let g:startify_use_env = 1
+
+let g:mapleader = " "
+
+let g:lightline = {
+	\ 'mode_map': {
+		\ 'n': 'NML',
+		\ 'i': 'INS',
+		\ 'c': 'CMD',
+		\ 'r': 'REP',
+		\ 'v': 'VIS',
+		\ 'V': 'V-L',
+		\ "\<C-v>": 'V-B',
+		\ 's': 'SEL',
+		\ 'S': 'S-L',
+		\ "\<C-s>": 'S-B',
+		\ 't': 'TTY',
+		\ },
+	\ }
+
+let g:scroll_factor = 1
+
+" Mappings
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+nnoremap <leader>e :NERDTreeFocus<CR>
+
+" Remappings
+imap jj <Esc>
+
+" Highlight groups
+hi link SpecialKey NonText

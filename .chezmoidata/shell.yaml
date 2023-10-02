@@ -3,10 +3,10 @@
 aliases:
   g: git
   cm: chezmoi
-  vi: nvim
   fetch: neofetch --config ~/.config/neofetch/simple.conf
   sudo: "sudo -v; sudo -E " # -v refreshes timeout; space after command allows further alias expansion
 
 env:
-  EDITOR: nvim
+  EDITOR: vim
+    test
   PAGER: less -R
