@@ -50,6 +50,8 @@ set list
 set listchars=trail:.,multispace:.,nbsp:⍽,tab:-->,precedes:<,extends:>
 " yank to middle mouse click buffer
 set clipboard=unnamed
+" show partial command
+set showcmd
 
 let g:startify_custom_header = startify#center([
 	\ "           d8,              ",
