@@ -1,5 +1,5 @@
 " Plugins
-call plug#begin()
+call plug#begin('~/.vim/plugged')
 
 " Editing
 Plug 'tpope/vim-sensible'
