@@ -36,6 +36,14 @@ autocmd! BufWritePost $MYVIMRC source $MYVIMRC | echom "Reloaded $MYVIMRC"
 " auto resize windows when terminal is resized
 autocmd! VimResized * tabdo wincmd =
 
+" auto toggle between absolute and relative line numbers:
+set number
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+augroup END
+
 set encoding=UTF-8
 " enable mouse support
 set mouse=a
@@ -43,8 +51,6 @@ set mouse=a
 set noshowmode
 " use 24-bit color
 set termguicolors
-" relative line numbers
-set relativenumber
 " make whitespace visible
 set list
 set listchars=trail:.,multispace:.,nbsp:⍽,tab:-->,precedes:<,extends:>
