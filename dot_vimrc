@@ -53,7 +53,7 @@ set noshowmode
 set termguicolors
 " make whitespace visible
 set list
-set listchars=trail:.,multispace:.,nbsp:⍽,tab:-->,precedes:<,extends:>
+set listchars=trail:◦,multispace:◦,nbsp:⍽,tab:-->,precedes:«,extends:»
 " yank to middle mouse click buffer
 set clipboard=unnamed
 " show partial command
