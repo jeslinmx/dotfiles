@@ -61,6 +61,14 @@ set showcmd
 " case-insensitive searching except when uppercase characters present
 set ignorecase
 set smartcase
+" disable line wrapping, turn on graduated scrolling
+set nowrap
+set sidescroll=5
+" wrap at word boundaries
+set linebreak
+" indicate word wraps in the gutter
+set showbreak=\ ++\ …
+set cpoptions+=n
 
 let g:startify_custom_header = startify#center([
 	\ "           d8,              ",
@@ -99,6 +107,8 @@ let g:scroll_factor = 1
 " Mappings
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 nnoremap <leader>e :NERDTreeFocus<CR>
+nmap j gj
+nmap k gk
 
 " Remappings
 imap jj <Esc>
