@@ -58,6 +58,9 @@ set listchars=trail:◦,multispace:◦,nbsp:⍽,tab:-->,precedes:«,extends:»
 set clipboard=unnamed
 " show partial command
 set showcmd
+" case-insensitive searching except when uppercase characters present
+set ignorecase
+set smartcase
 
 let g:startify_custom_header = startify#center([
 	\ "           d8,              ",
