@@ -21,10 +21,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'itchyny/lightline.vim'
-Plug 'ryanoasis/vim-devicons'
 Plug 'liuchengxu/vim-which-key'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'mhinz/vim-startify'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -100,7 +100,18 @@ let g:lightline = {
 		\ "\<C-s>": 'S-B',
 		\ 't': 'TTY',
 		\ },
+	\ 'component_function': {
+		\ 'filetype': 'IconFiletype',
+		\ 'fileformat': 'IconFileformat',
+		\ }
 	\ }
+  function! IconFiletype()
+    return WebDevIconsGetFileTypeSymbol() . ( winwidth(0) > 70 ? ' ' . ( strlen(&filetype) ? &filetype : 'unknown' ) : '' )
+  endfunction
+  
+  function! IconFileformat()
+    return winwidth(0) > 70 ? WebDevIconsGetFileFormatSymbol() : ''
+  endfunction
 
 let g:scroll_factor = 1
 
