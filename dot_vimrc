@@ -124,11 +124,14 @@ let g:scroll_factor = 1
 " Mappings
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 nnoremap <leader>e :NERDTreeFocus<CR>
-nmap j gj
-nmap k gk
+nnoremap <C-W>t :terminal<CR>
+nnoremap <C-W>T :vertical terminal<CR>
 
 " Remappings
 imap jj <Esc>
+nmap j gj
+nmap k gk
+tmap <C-W><C-W> <C-W>N
 
 " Highlight groups
 hi link SpecialKey NonText
