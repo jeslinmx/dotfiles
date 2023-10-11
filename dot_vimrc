@@ -7,6 +7,7 @@ Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'markonm/traces.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 't9md/vim-smalls'
 
 " Editor visuals
 Plug 'gorodinskiy/vim-coloresque'
@@ -121,11 +122,17 @@ let g:lightline = {
 
 let g:scroll_factor = 1
 
+let g:smalls_jump_trigger = '<CR>'
+let g:smalls_auto_jump = 1
+let g:smalls_auto_jump_min_input_length = 2
+let g:smalls_auto_set_min_input_length = 2
+
 " Mappings
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 nnoremap <leader>e :NERDTreeFocus<CR>
 nnoremap <C-W>t :terminal<CR>
 nnoremap <C-W>T :vertical terminal<CR>
+nnoremap s <Plug>(smalls)
 
 " Remappings
 imap jj <Esc>
