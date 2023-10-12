@@ -127,18 +127,43 @@ let g:smalls_auto_jump = 1
 let g:smalls_auto_jump_min_input_length = 2
 let g:smalls_auto_set_min_input_length = 2
 
+" Leader mappings
+
+let g:nleadermap = {
+    \ 'e': [':NERDTreeFocus', 'focus-nerdtree'],
+    \ }
+
+let g:nleadermap.g = {
+    \ 'name': '+git',
+    \ '<CR>': '<enter raw command>',
+    \ 'c': [':Git commit', 'commit'],
+    \ }
+nnoremap <leader>g<CR> :Git
+
+let g:nleadermap.s = {
+    \ 'name': '+set',
+    \ 'w': [':set wrap! wrap?', 'wrap'],
+    \ }
+
+let g:nleadermap.t = {
+    \ 'name': '+term',
+    \ 'h': [':terminal', 'h-term'],
+    \ 'v': [':vertical terminal', 'v-term'],
+    \ }
+
+call which_key#register('<Space>', "g:nleadermap", 'n')
+
 " Mappings
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
-nnoremap <leader>e :NERDTreeFocus<CR>
-nnoremap <C-W>t :terminal<CR>
-nnoremap <C-W>T :vertical terminal<CR>
 nnoremap s <Plug>(smalls)
 
 " Remappings
 imap jj <Esc>
+tmap jj <C-W>N
 nmap j gj
 nmap k gk
-tmap <C-W><C-W> <C-W>N
+vmap < <gv
+vmap > >gv
 
 " Highlight groups
 hi link SpecialKey NonText
