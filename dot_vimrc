@@ -93,31 +93,75 @@ let g:startify_use_env = 1
 
 let g:mapleader = " "
 
-let g:lightline = {
-    \ 'mode_map': {
-        \ 'n': '',
-        \ 'i': '󰙏',
-        \ 'c': ':',
-        \ 'R': '󰯍',
-        \ 'v': '󰈈',
-        \ 'V': '󱀦',
-        \ "\<C-v>": '󰡫',
-        \ 's': '󰒉',
-        \ 'S': '',
-        \ "\<C-s>": '󰩭',
-        \ 't': '',
-        \ },
-    \ 'component_function': {
-        \ 'filetype': 'IconFiletype',
-        \ 'fileformat': 'IconFileformat',
-        \ }
+let g:lightline = {}
+let g:lightline.active = {
+    \ 'left': [
+        \ [ 'mode', 'paste' ],
+        \ [ 'fugitive', 'file+status' ]
+        \ ],
+    \ 'right': [
+        \ [ 'lineinfo' ],
+        \ [ 'percent' ],
+        \ [ 'fileformat', 'fileencoding', 'filetype' ]
+        \ ]
     \ }
+let g:lightline.inactive = {
+    \ 'left': [ [ 'filename' ] ],
+    \ 'right': [ [ 'lineinfo' ],
+    \            [ 'percent' ] ] }
+let g:lightline.tabline = {
+    \ 'left': [ [ 'tabs' ] ],
+    \ 'right': [ [ 'close' ] ] }
+let g:lightline.mode_map = {
+    \ 'n': '',
+    \ 'i': '󰙏',
+    \ 'c': ':',
+    \ 'R': '󰯍',
+    \ 'v': '󰈈',
+    \ 'V': '󱀦',
+    \ "\<C-v>": '󰡫',
+    \ 's': '󰒉',
+    \ 'S': '',
+    \ "\<C-s>": '󰩭',
+    \ 't': '',
+    \ }
+let g:lightline.component_function = {
+    \ 'filetype': 'IconFiletype',
+    \ 'fileformat': 'IconFileformat',
+    \ 'fugitive': 'LightlineFugitive',
+    \ 'file+status': 'LightlineFileAndStatus',
+    \ }
+let g:lightline.component_visible_condition = {
+    \ 'filestatus': '&paste',
+    \ }
+
 function! IconFiletype()
     return WebDevIconsGetFileTypeSymbol() . ( winwidth(0) > 70 ? ' ' . ( strlen(&filetype) ? &filetype : 'unknown' ) : '' )
 endfunction
 
 function! IconFileformat()
     return winwidth(0) > 70 ? WebDevIconsGetFileFormatSymbol() : ''
+endfunction
+
+function! LightlineFileAndStatus()
+    let status = (
+        \ &ft ==# 'help' ? '󰣯'
+        \ : &modified ? '󰏫'
+        \ : &readonly ? '󰏯'
+        \ : !&modifiable ? '󰌾'
+        \ : '' )
+    return join( filter([expand('%:t'), status], '!empty(v:val)') )
+endfunction
+
+function! LightlineFugitive()
+    try
+        if expand('%t') !~? 'Tagbar\|Gundo\|NERD' && &ft !~? 'vimfiler' && exists('*FugitiveHead')
+            let branch = FugitiveHead()
+            return branch !=# '' ? ' ' . branch : ''
+        endif
+    catch
+    endtry
+    return ''
 endfunction
 
 let g:scroll_factor = 1
