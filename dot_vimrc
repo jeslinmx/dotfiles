@@ -95,17 +95,17 @@ let g:mapleader = " "
 
 let g:lightline = {
     \ 'mode_map': {
-        \ 'n': 'NML',
-        \ 'i': 'INS',
-        \ 'c': 'CMD',
-        \ 'r': 'REP',
-        \ 'v': 'VIS',
-        \ 'V': 'V-L',
-        \ "\<C-v>": 'V-B',
-        \ 's': 'SEL',
-        \ 'S': 'S-L',
-        \ "\<C-s>": 'S-B',
-        \ 't': 'TTY',
+        \ 'n': '',
+        \ 'i': '󰙏',
+        \ 'c': ':',
+        \ 'R': '󰯍',
+        \ 'v': '󰈈',
+        \ 'V': '󱀦',
+        \ "\<C-v>": '󰡫',
+        \ 's': '󰒉',
+        \ 'S': '',
+        \ "\<C-s>": '󰩭',
+        \ 't': '',
         \ },
     \ 'component_function': {
         \ 'filetype': 'IconFiletype',
