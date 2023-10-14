@@ -66,8 +66,8 @@ set mouse=a
 set termguicolors
 " disable the --MODE-- message in lastline
 set noshowmode
-" show partial command in statusline
-set showcmd showcmdloc=statusline
+" show partial command in lastline
+set showcmd showcmdloc=last
 " make whitespace visible
 set list
 set listchars=trail:◦,multispace:◦,nbsp:⍽,tab:-->,precedes:«,extends:»
@@ -111,26 +111,36 @@ let g:startify_use_env = 1
 let g:lightline = {}
 let g:lightline.active = {
     \ 'left': [
-        \ [ 'mode', 'paste' ],
-        \ [ 'fugitive', 'file+status' ]
+        \ [ 'mode', 'paste', 'cmd' ],
+        \ [ 'fugitive' ],
+        \ [ 'filetype', 'filename', 'filestatus' ]
         \ ],
     \ 'right': [
         \ [ 'lineinfo' ],
         \ [ 'percent' ],
-        \ [ 'fileformat', 'fileencoding', 'filetype' ]
+        \ [ 'fileformat', 'encoding?' ]
         \ ]
     \ }
 let g:lightline.inactive = {
-    \ 'left': [ [ 'file+status' ] ],
-    \ 'right': [ [ 'lineinfo' ],
-    \            [ 'percent' ] ] }
+    \ 'left': [
+        \ [ 'fugitive' ],
+        \ [ 'filename' , 'filestatus' ]
+        \ ],
+    \ 'right': [
+        \ [ 'lineinfo' ],
+        \ [ 'percent' ],
+        \ [ 'fileformat', 'encoding?' ]
+        \ ] }
+let g:lightline.subseparator = {
+    \ 'left': ''
+    \ }
 let g:lightline.tabline = {
     \ 'left': [ [ 'tabs' ] ],
     \ 'right': [ [ 'close' ] ] }
 let g:lightline.mode_map = {
     \ 'n': '',
     \ 'i': '󰙏',
-    \ 'c': ':',
+    \ 'c': '',
     \ 'R': '󰯍',
     \ 'v': '󰈈',
     \ 'V': '󱀦',
@@ -140,11 +150,15 @@ let g:lightline.mode_map = {
     \ "\<C-s>": '󰩭',
     \ 't': '',
     \ }
+let g:lightline.component = {
+    \ 'cmd': '%S',
+    \ }
 let g:lightline.component_function = {
     \ 'filetype': 'IconFiletype',
     \ 'fileformat': 'IconFileformat',
     \ 'fugitive': 'LightlineFugitive',
-    \ 'file+status': 'LightlineFileAndStatus',
+    \ 'filestatus': 'LightlineFileStatus',
+    \ 'encoding?': 'LightlineNondefaultEncoding',
     \ }
 
 function! IconFiletype()
@@ -155,14 +169,18 @@ function! IconFileformat()
     return winwidth(0) > 70 ? WebDevIconsGetFileFormatSymbol() : ''
 endfunction
 
-function! LightlineFileAndStatus()
-    let status = (
+function! LightlineNondefaultEncoding()
+    let l:encoding = &fenc !=# '' ? &fenc : &enc
+    return l:encoding ==# 'utf-8' ? '' : l:encoding
+endfunction
+
+function! LightlineFileStatus()
+    return (
         \ &ft ==# 'help' ? '󰣯'
         \ : &modified ? '󰏫'
         \ : &readonly ? '󰏯'
         \ : !&modifiable ? '󰌾'
         \ : '' )
-    return join( filter([expand('%:t'), status], '!empty(v:val)') )
 endfunction
 
 function! LightlineFugitive()
