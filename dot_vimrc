@@ -32,10 +32,18 @@ call plug#end()
 colorscheme catppuccin_mocha
 
 " auto re-source .vimrc on change
-autocmd! BufWritePost $MYVIMRC source $MYVIMRC | echom "Reloaded $MYVIMRC"
+augroup reloadvimrc
+    autocmd!
+    autocmd BufWritePost $MYVIMRC
+        \ source $MYVIMRC
+        \ | echom "Reloaded $MYVIMRC"
+augroup END
 
 " auto resize windows when terminal is resized
-autocmd! VimResized * tabdo wincmd =
+augroup resizewindows
+    autocmd!
+    autocmd VimResized * tabdo wincmd =
+augroup END
 
 " auto toggle between absolute and relative line numbers:
 set number
@@ -45,7 +53,7 @@ augroup numbertoggle
     autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
 augroup END
 
-augroup vimrc-incsearch-highlight
+augroup incsearch-highlight
     autocmd!
     autocmd CmdlineEnter /,\? :set hlsearch
     autocmd CmdlineLeave /,\? :set nohlsearch
@@ -54,28 +62,25 @@ augroup END
 set encoding=UTF-8
 " enable mouse support
 set mouse=a
-" disable the --MODE-- message below statusline
-set noshowmode
 " use 24-bit color
 set termguicolors
+" disable the --MODE-- message in lastline
+set noshowmode
+" show partial command in statusline
+set showcmd showcmdloc=statusline
 " make whitespace visible
 set list
 set listchars=trail:◦,multispace:◦,nbsp:⍽,tab:-->,precedes:«,extends:»
-" yank to middle mouse click buffer
-set clipboard=unnamed
-" show partial command
-set showcmd
-" case-insensitive searching except when uppercase characters present
-set ignorecase
-set smartcase
 " disable line wrapping, turn on graduated scrolling
-set nowrap
-set sidescroll=5
+set nowrap sidescroll=5
 " wrap at word boundaries
 set linebreak
 " indicate word wraps in the gutter
-set showbreak=\ ++\ …
-set cpoptions+=n
+set showbreak=\ ++\ … cpoptions+=n
+" yank to middle mouse click buffer
+set clipboard=unnamed
+" case-insensitive searching except when uppercase characters present
+set ignorecase smartcase
 
 let g:startify_custom_header = startify#center([
     \ "           d8,              ",
@@ -91,8 +96,6 @@ let g:startify_change_to_dir = 1
 let g:startify_change_to_vcs_root = 1
 let g:startify_use_env = 1
 
-let g:mapleader = " "
-
 let g:lightline = {}
 let g:lightline.active = {
     \ 'left': [
@@ -106,7 +109,7 @@ let g:lightline.active = {
         \ ]
     \ }
 let g:lightline.inactive = {
-    \ 'left': [ [ 'filename' ] ],
+    \ 'left': [ [ 'file+status' ] ],
     \ 'right': [ [ 'lineinfo' ],
     \            [ 'percent' ] ] }
 let g:lightline.tabline = {
@@ -130,9 +133,6 @@ let g:lightline.component_function = {
     \ 'fileformat': 'IconFileformat',
     \ 'fugitive': 'LightlineFugitive',
     \ 'file+status': 'LightlineFileAndStatus',
-    \ }
-let g:lightline.component_visible_condition = {
-    \ 'filestatus': '&paste',
     \ }
 
 function! IconFiletype()
@@ -172,6 +172,8 @@ let g:smalls_auto_jump_min_input_length = 2
 let g:smalls_auto_set_min_input_length = 2
 
 " Leader mappings
+
+let g:mapleader = " "
 
 let g:nleadermap = {
     \ 'e': [':NERDTreeFocus', 'focus-nerdtree'],
