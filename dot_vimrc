@@ -82,6 +82,16 @@ set clipboard=unnamed
 " case-insensitive searching except when uppercase characters present
 set ignorecase smartcase
 
+function! s:formatVersion(version)
+    let l:verstr = string(a:version)
+    let l:vercomponents = ( strlen(l:verstr) >= 7 )
+        \ ? [l:verstr[:-7],l:verstr[-6:-5],l:verstr[-4:]]
+        \ : [l:verstr[:-3],l:verstr[-2:]]
+    return l:vercomponents
+        \ ->map({idx, val -> trim(val[:-2], '0', 1) . val[-1:]})
+        \ ->join('.')
+endfunction
+
 let g:startify_custom_header = startify#center([
     \ "           d8,              ",
     \ "          `8P               ",
@@ -91,6 +101,8 @@ let g:startify_custom_header = startify#center([
     \ "?8b ,88'  d88  d88  d88  88P",
     \ "`?888P'  d88' d88' d88'  88b",
     \ ])
+    \ + ['']
+    \ + startify#center(['version ' . s:formatVersion(v:version)])
 let g:startify_custom_footer = startify#center(startify#fortune#cowsay())
 let g:startify_change_to_dir = 1
 let g:startify_change_to_vcs_root = 1
