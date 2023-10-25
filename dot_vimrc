@@ -60,6 +60,7 @@ augroup incsearch-highlight
 augroup END
 
 set encoding=UTF-8
+set nomodeline
 " enable mouse support
 set mouse=a
 " use 24-bit color
