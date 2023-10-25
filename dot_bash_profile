@@ -6,3 +6,5 @@ if [[ -z $TMUX ]] && [[ -n $SSH_TTY ]]; then
     exec tmux new-session -A -s ssh_tmux
   fi
 fi
+
+[[ -f ~/.bashrc ]] && source ~/.bashrc
