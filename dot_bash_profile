@@ -1,0 +1,8 @@
+if [[ -z $TMUX ]] && [[ -n $SSH_TTY ]]; then
+  if ! type "tmux" &> /dev/null; then
+    echo "install tmux for persistent SSH sessions."
+  else
+    export LANG=en_US.UTF-8
+    exec tmux new-session -A -s ssh_tmux
+  fi
+fi
