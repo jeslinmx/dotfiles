@@ -22,6 +22,7 @@ Plug 'tpope/vim-surround'
 Plug 'editorconfig/editorconfig-vim'
 Plug 't9md/vim-smalls'
 Plug 'jiangmiao/auto-pairs'
+Plug 'machakann/vim-highlightedyank'
 
 " Editor visuals
 Plug 'gorodinskiy/vim-coloresque'
@@ -176,6 +177,9 @@ let g:lightline.component_function = {
     \ 'encoding?': 'LightlineNondefaultEncoding',
     \ }
 
+let g:highlightedyank_highlight_duration = 200
+let g:highlightedyank_highlight_in_visual = 0
+
 function! IconFiletype()
     return WebDevIconsGetFileTypeSymbol() . ( winwidth(0) > 70 ? ' ' . ( strlen(&filetype) ? &filetype : 'unknown' ) : '' )
 endfunction
@@ -260,3 +264,4 @@ vmap > >gv
 
 " Highlight groups
 hi link SpecialKey NonText
+hi HighlightedyankRegion cterm=reverse gui=reverse
