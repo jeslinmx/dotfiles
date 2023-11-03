@@ -86,7 +86,7 @@ set noshowmode
 set showcmd showcmdloc=last
 " make whitespace visible
 set list
-set listchars=trail:◦,multispace:◦,nbsp:⍽,tab:-->,precedes:«,extends:»
+set listchars=trail:◦,multispace:◦,leadmultispace:\ ,nbsp:⍽,tab:-->,precedes:«,extends:»
 " disable line wrapping, turn on graduated scrolling
 set nowrap sidescroll=5
 " wrap at word boundaries
