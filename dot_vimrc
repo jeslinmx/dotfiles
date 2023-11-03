@@ -124,7 +124,7 @@ let g:startify_change_to_dir = 1
 let g:startify_change_to_vcs_root = 1
 let g:startify_use_env = 1
 
-let g:lightline = {}
+let g:lightline = { 'colorscheme': 'catppuccin_mocha' }
 let g:lightline.active = {
     \ 'left': [
         \ [ 'mode', 'paste', 'cmd' ],
