@@ -35,8 +35,7 @@ Plug 'airblade/vim-gitgutter'
 
 " UI
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tpope/vim-vinegar'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'liuchengxu/vim-which-key'
@@ -98,6 +97,8 @@ set showbreak=\ ++\ … cpoptions+=n
 set clipboard=unnamed
 " case-insensitive searching except when uppercase characters present
 set ignorecase smartcase
+" hide buffers when they are unloaded, instead of closing them
+set hidden
 " new splits are created at right and bottom, instead of left and top
 set splitbelow splitright
 
@@ -109,6 +110,38 @@ function! s:formatVersion(version)
     return l:vercomponents
         \ ->map({idx, val -> trim(val[:-2], '0', 1) . val[-1:]})
         \ ->join('.')
+endfunction
+
+let g:netrw_keepdir = 0
+let g:netrw_banner = 0
+let g:netrw_preview = 1
+let g:netrw_alto = &sb
+let g:netrw_altv = &spr
+let g:netrw_localcopydircmd = 'cp -r'
+
+augroup netrw_init
+  autocmd!
+  autocmd filetype netrw call NetrwInit()
+augroup END
+
+function! NetrwInit()
+    " show dotfiles with .
+    nmap <buffer> . gh
+    " preview with tab
+    nmap <buffer> <TAB> p
+    nmap <buffer> <S-TAB> <C-W>z
+    " navigate history with h/l
+    nmap <buffer> h u
+    nmap <buffer> l U
+    " vi-like rename/change, mark/yank, open/new
+    nmap <buffer> C R
+    nmap <buffer> y mf
+    nmap <buffer> Y mF
+    nmap <buffer> o %
+    " sneak
+    nmap <buffer> s <Plug>(smalls)
+    " fix for lightline
+    call lightline#enable()
 endfunction
 
 let g:startify_custom_header = startify#center([
@@ -234,7 +267,6 @@ let g:smalls_auto_set_min_input_length = 2
 let g:mapleader = " "
 
 let g:nleadermap = {
-    \ 'e': [':NERDTreeFocus', 'focus-nerdtree'],
     \ }
 
 let g:nleadermap.g = {
