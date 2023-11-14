@@ -97,6 +97,8 @@ set showbreak=\ ++\ … cpoptions+=n
 set clipboard=unnamed
 " case-insensitive searching except when uppercase characters present
 set ignorecase smartcase
+" new splits are created at right and bottom, instead of left and top
+set splitbelow splitright
 
 function! s:formatVersion(version)
     let l:verstr = string(a:version)
@@ -123,13 +125,19 @@ let g:startify_custom_footer = startify#center(startify#fortune#cowsay())
 let g:startify_change_to_dir = 1
 let g:startify_change_to_vcs_root = 1
 let g:startify_use_env = 1
+let g:startify_lists = [
+    \ { 'type': 'dir',       'header': ['   MRU ' . getcwd() . ' ' . system('git log -1 --format="(%h %s)" -z 2> /dev/null')->trim()] },
+    \ { 'type': 'sessions',  'header': ['   Sessions']       },
+    \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+    \ { 'type': 'commands',  'header': ['   Commands']       },
+    \ ]
 
 let g:lightline = { 'colorscheme': 'catppuccin_mocha' }
 let g:lightline.active = {
     \ 'left': [
         \ [ 'mode', 'paste', 'cmd' ],
         \ [ 'fugitive' ],
-        \ [ 'filetype', 'filename', 'filestatus' ]
+        \ [ 'filename', 'filestatus', 'filetype' ]
         \ ],
     \ 'right': [
         \ [ 'lineinfo' ],
