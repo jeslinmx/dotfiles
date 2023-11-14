@@ -37,6 +37,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'liuchengxu/vim-which-key'
 Plug 'mhinz/vim-startify'
