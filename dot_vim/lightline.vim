@@ -56,7 +56,7 @@ function! IconFiletype()
 endfunction
 
 function! IconFileformat()
-    return winwidth(0) > 70 ? WebDevIconsGetFileFormatSymbol() : ''
+    return winwidth(0) > 70 ? { 'dos': '⏎', 'unix': '␊', 'mac': '␍' }[&fileformat] : ''
 endfunction
 
 function! LightlineNondefaultEncoding()
