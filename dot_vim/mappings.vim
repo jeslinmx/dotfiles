@@ -36,18 +36,18 @@ call which_key#register('<Space>', "g:nleadermap", 'n')
 " Mappings
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 nnoremap s <Plug>(smalls)
+nnoremap <silent> <expr> j (v:count > 0 ? 'j' : 'gj')
+nnoremap <silent> <expr> k (v:count > 0 ? 'k' : 'gk')
+vnoremap <silent> <expr> j (v:count > 0 ? 'j' : 'gj')
+vnoremap <silent> <expr> k (v:count > 0 ? 'k' : 'gk')
 
 " Remappings
 imap jj <Esc>
 tmap jj <C-W>N
-nmap j gj
-nmap k gk
 nmap <C-H> <C-W>h
 nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
 nmap <C-L> <C-W>l
-vmap j gj
-vmap k gk
-vmap < <gv
-vmap > >gv
+vmap <silent> < <gv
+vmap <silent> > >gv
 
