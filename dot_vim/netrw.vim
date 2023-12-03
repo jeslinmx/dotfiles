@@ -13,9 +13,13 @@ augroup END
 function! NetrwInit()
     " show dotfiles with .
     nmap <buffer> . gh
-    " preview with tab
-    nmap <buffer> <TAB> p
-    nmap <buffer> <S-TAB> <C-W>z
+    " switch buffers and tabs with tab
+    nnoremap <buffer> <Tab> :bnext<CR>
+    nnoremap <buffer> <S-Tab> :bNext<CR>
+    nnoremap <buffer> <C-Tab> gt
+    nnoremap <buffer> <C-S-Tab> gT
+    " preview and un-preview with p
+    nmap <buffer> P <C-W>z
     " navigate history with h/l
     nmap <buffer> h u
     nmap <buffer> l U
