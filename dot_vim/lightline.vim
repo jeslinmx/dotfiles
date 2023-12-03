@@ -61,16 +61,18 @@ let g:lightline = {
     \ },
 \ }
 
-let lightline#bufferline#right_aligned = 1
-let lightline#bufferline#unicode_symbols = 1
-let lightline#bufferline#show_number = 1
-let lightline#bufferline#buffer_number_map = {
+let g:lightline#bufferline#right_aligned = 1
+let g:lightline#bufferline#show_number = 0
+let g:lightline#bufferline#modified = '󰏫'
+let g:lightline#bufferline#read_only = '󰏯'
+let g:lightline#bufferline#more_buffers = '…'
+let g:lightline#bufferline#buffer_number_map = {
     \ 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴',
     \ 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹'
 \ }
-let lightline#bufferline#enable_devicons = 1
-let lightline#bufferline#enable_nerdfont = 1
-let lightline#bufferline#icon_position = 'left'
+let g:lightline#bufferline#enable_devicons = 1
+let g:lightline#bufferline#enable_nerdfont = 1
+let g:lightline#bufferline#icon_position = 'left'
 
 function! IconFiletype()
     return WebDevIconsGetFileTypeSymbol() . ( winwidth(0) > 70 ? ' ' . ( strlen(&filetype) ? &filetype : 'unknown' ) : '' )
