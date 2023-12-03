@@ -40,8 +40,8 @@ set nowrap sidescroll=5
 set linebreak
 " indicate word wraps in the gutter
 set showbreak=\ ++\ … cpoptions+=n
-" yank to middle mouse click buffer
-set clipboard=unnamed
+" yank to clipboard
+set clipboard=unnamedplus
 " case-insensitive searching except when uppercase characters present
 set ignorecase smartcase
 " hide buffers when they are unloaded, instead of closing them
