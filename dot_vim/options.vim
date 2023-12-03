@@ -50,6 +50,19 @@ set hidden
 set splitbelow splitright
 " show tabline all the time, even when there's only one tabpage
 set showtabline=2
+" persist undo history
+if has("persistent_undo")
+   let target_path = expand('~/.local/state/vim/undo')
+
+    " create the directory and any parent directories
+    " if the location does not exist.
+    if !isdirectory(target_path)
+        call mkdir(target_path, "p", 0700)
+    endif
+
+    let &undodir=target_path
+    set undofile
+endif
 
 let g:highlightedyank_highlight_duration = 200
 let g:highlightedyank_highlight_in_visual = 0
@@ -61,3 +74,7 @@ let g:smalls_auto_jump = 1
 let g:smalls_auto_jump_min_input_length = 2
 let g:smalls_auto_set_min_input_length = 2
 
+let g:undotree_WindowLayout = 3
+let g:undotree_DiffAutoOpen = 0
+let g:undotree_SetFocusWhenToggle = 1
+let g:undotree_ShortIndicators = 1

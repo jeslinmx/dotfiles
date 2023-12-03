@@ -10,6 +10,7 @@ Plug 't9md/vim-smalls'
 Plug 'jiangmiao/auto-pairs'
 Plug 'machakann/vim-highlightedyank'
 Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'mbbill/undotree'
 
 " Editor visuals
 Plug 'gorodinskiy/vim-coloresque'

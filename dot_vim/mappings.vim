@@ -2,7 +2,9 @@
 
 let g:mapleader = " "
 
-let g:nleadermap = {}
+let g:nleadermap = {
+    \ 'u': [':UndotreeToggle', 'undotree']
+    \ }
 
 let g:nleadermap.g = {
     \ 'name': '+git',
