@@ -23,6 +23,7 @@ Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'tpope/vim-vinegar'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'mengelbrecht/lightline-bufferline'
 Plug 'liuchengxu/vim-which-key'
 Plug 'mhinz/vim-startify'
 Plug 'ryanoasis/vim-devicons'

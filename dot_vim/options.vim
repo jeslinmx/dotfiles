@@ -48,6 +48,8 @@ set ignorecase smartcase
 set hidden
 " new splits are created at right and bottom, instead of left and top
 set splitbelow splitright
+" show tabline all the time, even when there's only one tabpage
+set showtabline=2
 
 let g:highlightedyank_highlight_duration = 200
 let g:highlightedyank_highlight_in_visual = 0

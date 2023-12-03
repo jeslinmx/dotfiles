@@ -1,55 +1,76 @@
-let g:lightline = { 'colorscheme': 'catppuccin_mocha' }
-let g:lightline.active = {
-    \ 'left': [
-        \ [ 'mode', 'paste', 'cmd' ],
-        \ [ 'fugitive' ],
-        \ [ 'filename', 'filestatus', 'filetype' ]
+let g:lightline = {
+    \ 'colorscheme': 'catppuccin_mocha',
+    \ 'active': {
+        \ 'left': [
+            \ [ 'mode', 'paste', 'cmd' ],
+            \ [ 'fugitive' ],
+            \ [ 'filename', 'filestatus', 'filetype' ]
         \ ],
-    \ 'right': [
-        \ [ 'lineinfo' ],
-        \ [ 'percent' ],
-        \ [ 'fileformat', 'encoding?' ]
+        \ 'right': [
+            \ [ 'lineinfo' ],
+            \ [ 'percent' ],
+            \ [ 'fileformat', 'encoding?' ]
         \ ]
-    \ }
-let g:lightline.inactive = {
-    \ 'left': [
-        \ [ 'fugitive' ],
-        \ [ 'filename' , 'filestatus' ]
+    \ },
+    \ 'inactive': {
+        \ 'left': [
+            \ [ 'fugitive' ],
+            \ [ 'filename' , 'filestatus' ]
         \ ],
-    \ 'right': [
-        \ [ 'lineinfo' ],
-        \ [ 'percent' ],
-        \ [ 'fileformat', 'encoding?' ]
-        \ ] }
-let g:lightline.subseparator = {
-    \ 'left': ''
-    \ }
-let g:lightline.tabline = {
-    \ 'left': [ [ 'tabs' ] ],
-    \ 'right': [ [ 'close' ] ] }
-let g:lightline.mode_map = {
-    \ 'n': '',
-    \ 'i': '󰙏',
-    \ 'c': '',
-    \ 'R': '󰯍',
-    \ 'v': '󰈈',
-    \ 'V': '󱀦',
-    \ "\<C-v>": '󰡫',
-    \ 's': '󰒉',
-    \ 'S': '',
-    \ "\<C-s>": '󰩭',
-    \ 't': '',
-    \ }
-let g:lightline.component = {
-    \ 'cmd': '%S',
-    \ }
-let g:lightline.component_function = {
-    \ 'filetype': 'IconFiletype',
-    \ 'fileformat': 'IconFileformat',
-    \ 'fugitive': 'LightlineFugitive',
-    \ 'filestatus': 'LightlineFileStatus',
-    \ 'encoding?': 'LightlineNondefaultEncoding',
-    \ }
+        \ 'right': [
+            \ [ 'lineinfo' ],
+            \ [ 'percent' ],
+            \ [ 'fileformat', 'encoding?' ]
+        \ ]
+    \ },
+    \ 'subseparator': {
+        \ 'left': ''
+    \ },
+    \ 'tabline': {
+        \ 'left': [ [ 'tabs' ] ],
+        \ 'right': [ [ 'buffers' ] ]
+    \ },
+    \ 'mode_map': {
+        \ 'n': '',
+        \ 'i': '󰙏',
+        \ 'c': '',
+        \ 'R': '󰯍',
+        \ 'v': '󰈈',
+        \ 'V': '󱀦',
+        \ "\<C-v>": '󰡫',
+        \ 's': '󰒉',
+        \ 'S': '',
+        \ "\<C-s>": '󰩭',
+        \ 't': '',
+    \ },
+    \ 'component': {
+        \ 'cmd': '%S',
+    \ },
+    \ 'component_expand': {
+        \ 'buffers': 'lightline#bufferline#buffers'
+    \ },
+    \ 'component_type': {
+        \ 'buffers': 'tabsel'
+    \ },
+    \ 'component_function': {
+        \ 'filetype': 'IconFiletype',
+        \ 'fileformat': 'IconFileformat',
+        \ 'fugitive': 'LightlineFugitive',
+        \ 'filestatus': 'LightlineFileStatus',
+        \ 'encoding?': 'LightlineNondefaultEncoding',
+    \ },
+\ }
+
+let lightline#bufferline#right_aligned = 1
+let lightline#bufferline#unicode_symbols = 1
+let lightline#bufferline#show_number = 1
+let lightline#bufferline#buffer_number_map = {
+    \ 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴',
+    \ 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹'
+\ }
+let lightline#bufferline#enable_devicons = 1
+let lightline#bufferline#enable_nerdfont = 1
+let lightline#bufferline#icon_position = 'left'
 
 function! IconFiletype()
     return WebDevIconsGetFileTypeSymbol() . ( winwidth(0) > 70 ? ' ' . ( strlen(&filetype) ? &filetype : 'unknown' ) : '' )

@@ -36,6 +36,12 @@ call which_key#register('<Space>', "g:nleadermap", 'n')
 " Mappings
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 nnoremap s <Plug>(smalls)
+nnoremap gb :bnext<CR>
+nnoremap gB :bNext<CR>
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bNext<CR>
+nnoremap <C-Tab> gt
+nnoremap <C-S-Tab> gT
 nnoremap <silent> <expr> j (v:count > 0 ? 'j' : 'gj')
 nnoremap <silent> <expr> k (v:count > 0 ? 'k' : 'gk')
 vnoremap <silent> <expr> j (v:count > 0 ? 'j' : 'gj')
