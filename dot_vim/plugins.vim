@@ -4,10 +4,12 @@ Plug 'junegunn/vim-plug'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-eunuch'
 Plug 'editorconfig/editorconfig-vim'
 Plug 't9md/vim-smalls'
 Plug 'jiangmiao/auto-pairs'
 Plug 'machakann/vim-highlightedyank'
+Plug 'vim-scripts/ReplaceWithRegister'
 
 " Editor visuals
 Plug 'gorodinskiy/vim-coloresque'
