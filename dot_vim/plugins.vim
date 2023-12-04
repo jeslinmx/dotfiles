@@ -24,9 +24,11 @@ Plug 'airblade/vim-gitgutter'
 " UI
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'tpope/vim-vinegar'
+Plug 'vim-scripts/ZoomWin'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'liuchengxu/vim-which-key'
+Plug 'junegunn/vim-peekaboo'
 Plug 'mhinz/vim-startify'
 Plug 'ryanoasis/vim-devicons'
