@@ -33,6 +33,14 @@ let g:nleadermap.w = {
     \ 'q': [':quit', 'quit-window'],
     \ }
 
+let g:nleadermap.b = {
+    \ 'name': '+buf',
+    \ 'n': [':enew', 'new-buffer'],
+    \ 'q': [':bw', 'quit-buffer'],
+    \ 'a': [':unhide', 'all-loaded'],
+    \ 'A': [':ball', 'all'],
+    \ }
+
 call which_key#register('<Space>', "g:nleadermap", 'n')
 
 " Mappings
