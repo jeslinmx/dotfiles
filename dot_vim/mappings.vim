@@ -3,7 +3,8 @@
 let g:mapleader = " "
 
 let g:nleadermap = {
-    \ 'u': [':UndotreeToggle', 'undotree']
+    \ 'u': [':UndotreeToggle', 'undotree'],
+    \ '~': [':Startify', 'startify'],
     \ }
 
 let g:nleadermap.g = {

@@ -23,6 +23,7 @@ let g:startify_custom_footer = startify#center(startify#fortune#cowsay())
 let g:startify_change_to_dir = 1
 let g:startify_change_to_vcs_root = 1
 let g:startify_use_env = 1
+let g:startify_custom_indices = map(range(1,100), 'string(v:val)')
 let g:startify_lists = [
     \ { 'type': 'dir',       'header': ['   MRU ' . getcwd() . ' ' . system('git log -1 --format="(%h %s)" -z 2> /dev/null')->trim()] },
     \ { 'type': 'sessions',  'header': ['   Sessions']       },
