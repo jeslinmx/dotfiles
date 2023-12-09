@@ -2,15 +2,19 @@ Plug 'junegunn/vim-plug'
 
 " Editing
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-speeddating'
 Plug 'editorconfig/editorconfig-vim'
 Plug 't9md/vim-smalls'
 Plug 'jiangmiao/auto-pairs'
 Plug 'machakann/vim-highlightedyank'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'mbbill/undotree'
+Plug 'chrisbra/Recover.vim'
+Plug 'tpope/vim-unimpaired'
 
 " Editor visuals
 Plug 'gorodinskiy/vim-coloresque'
