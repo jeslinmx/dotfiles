@@ -14,6 +14,12 @@ augroup numbertoggle
     autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
 augroup END
 
+" highlight current line in insert mode
+augroup cursorline-insert
+    autocmd!
+    autocmd InsertEnter * set cursorline
+    autocmd InsertLeave * set nocursorline
+
 " live update what is being search
 augroup incsearch-highlight
     autocmd!
