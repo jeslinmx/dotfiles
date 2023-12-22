@@ -84,3 +84,7 @@ let g:undotree_WindowLayout = 3
 let g:undotree_DiffAutoOpen = 0
 let g:undotree_SetFocusWhenToggle = 1
 let g:undotree_ShortIndicators = 1
+
+let g:ctrlp_regexp = 1
+let g:ctrlp_match_window = 'top,order:ttb'
+let g:ctrlp_lazy_update = 200
