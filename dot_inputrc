@@ -10,3 +10,6 @@ set skip-completed-text on
 set vi-cmd-mode-string "\1\e[2 q\033[7m\2"
 set vi-ins-mode-string "\1\e[5 q\2"
 set visible-stats on
+
+"\e[A": history-search-backward
+"\e[B": history-search-forward
