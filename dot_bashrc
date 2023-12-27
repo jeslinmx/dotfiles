@@ -1,0 +1,13 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# If not running interactively (e.g. when called by scp), don't do anything
+[[ $- != *i* ]] && return
+
+for file in ~/.bashrc.d/*.bashrc; do
+    source "$file"
+done
