@@ -37,7 +37,7 @@ let g:nleadermap.w = {
 let g:nleadermap.b = {
     \ 'name': '+buf',
     \ 'n': [':enew', 'new-buffer'],
-    \ 'q': [':bw', 'quit-buffer'],
+    \ 'q': [':b#|bd#', 'quit-buffer'],
     \ 'a': [':unhide', 'all-loaded'],
     \ 'A': [':ball', 'all'],
     \ }
