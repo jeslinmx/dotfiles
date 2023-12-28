@@ -17,10 +17,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source $MYVIMRC
 \| endif
 
-call plug#begin('~/.vim/plugged')
 source ~/.vim/plugins.vim
-call plug#end()
-
 source ~/.vim/options.vim
 source ~/.vim/netrw.vim
 source ~/.vim/startify.vim

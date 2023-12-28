@@ -1,3 +1,4 @@
+call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
 
 " Editing
@@ -36,3 +37,4 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'junegunn/vim-peekaboo'
 Plug 'mhinz/vim-startify'
 Plug 'ryanoasis/vim-devicons'
+call plug#end()
