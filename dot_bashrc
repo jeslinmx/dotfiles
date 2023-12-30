@@ -8,6 +8,6 @@ fi
 # If not running interactively (e.g. when called by scp), don't do anything
 [[ $- != *i* ]] && return
 
-for file in ~/.bashrc.d/*.bashrc; do
+for file in ~/.bashrc.d/*.sh; do
     source "$file"
 done
