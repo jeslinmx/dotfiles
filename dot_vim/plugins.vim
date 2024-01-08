@@ -1,4 +1,5 @@
 call plug#begin('~/.vim/plugged')
+
 Plug 'junegunn/vim-plug'
 
 " Editing
@@ -22,6 +23,13 @@ Plug 'gorodinskiy/vim-coloresque'
 Plug 'luochen1990/rainbow'
 Plug 'vim-scripts/Smooth-Scroll'
 
+" LSP/code completion/formatting
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'dense-analysis/ale'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -37,4 +45,5 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'junegunn/vim-peekaboo'
 Plug 'mhinz/vim-startify'
 Plug 'ryanoasis/vim-devicons'
+
 call plug#end()
