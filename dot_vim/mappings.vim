@@ -21,16 +21,22 @@ let g:nleadermap.s = {
 
 let g:nleadermap.t = {
     \ 'name': '+term',
-    \ 'h': [':terminal', 'h-term'],
-    \ 'v': [':vertical terminal', 'v-term'],
+    \ 'h': [':execute "let prev_splitright = &splitright" | set nosplitright | execute "vertical terminal" | execute "let &splitright = prev_splitright"', 'term-left'],
+    \ 'j': [':execute "let prev_splitbelow = &splitbelow" | set splitbelow   | execute "terminal"          | execute "let &splitbelow = prev_splitbelow"', 'term-below'],
+    \ 'k': [':execute "let prev_splitbelow = &splitbelow" | set nosplitbelow | execute "terminal"          | execute "let &splitbelow = prev_splitbelow"', 'term-above'],
+    \ 'l': [':execute "let prev_splitright = &splitright" | set splitright   | execute "vertical terminal" | execute "let &splitright = prev_splitright"', 'term-right'],
     \ }
 
 let g:nleadermap.w = {
     \ 'name': '+win',
-    \ 'h': [':split', 'h-split'],
-    \ 'H': [':new', 'h-split-new'],
-    \ 'v': [':vsplit', 'v-split'],
-    \ 'V': [':vnew', 'v-split-new'],
+    \ 'h': [':execute "let prev_splitright = &splitright" | set nosplitright | execute "vsplit" | execute "let &splitright = prev_splitright"', 'split-left'],
+    \ 'j': [':execute "let prev_splitbelow = &splitbelow" | set splitbelow   | execute "split"  | execute "let &splitbelow = prev_splitbelow"', 'split-below'],
+    \ 'k': [':execute "let prev_splitbelow = &splitbelow" | set nosplitbelow | execute "split"  | execute "let &splitbelow = prev_splitbelow"', 'split-above'],
+    \ 'l': [':execute "let prev_splitright = &splitright" | set splitright   | execute "vsplit" | execute "let &splitright = prev_splitright"', 'split-right'],
+    \ 'H': [':execute "let prev_splitright = &splitright" | set nosplitright | execute "vnew" | execute "let &splitright = prev_splitright"', 'new-left'],
+    \ 'J': [':execute "let prev_splitbelow = &splitbelow" | set splitbelow   | execute "new"  | execute "let &splitbelow = prev_splitbelow"', 'new-below'],
+    \ 'K': [':execute "let prev_splitbelow = &splitbelow" | set nosplitbelow | execute "new"  | execute "let &splitbelow = prev_splitbelow"', 'new-above'],
+    \ 'L': [':execute "let prev_splitright = &splitright" | set splitright   | execute "vnew" | execute "let &splitright = prev_splitright"', 'new-right'],
     \ 'q': [':quit', 'quit-window'],
     \ }
 
