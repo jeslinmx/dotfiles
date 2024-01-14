@@ -1,5 +1,3 @@
-colorscheme catppuccin_mocha
-
 " auto resize windows when terminal is resized
 augroup resizewindows
     autocmd!
@@ -26,6 +24,9 @@ augroup incsearch-highlight
     autocmd CmdlineEnter /,\? :set hlsearch
     autocmd CmdlineLeave /,\? :set nohlsearch
 augroup END
+
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 set encoding=UTF-8
 set nomodeline
@@ -88,3 +89,8 @@ let g:undotree_ShortIndicators = 1
 let g:ctrlp_regexp = 1
 let g:ctrlp_match_window = 'top,order:ttb'
 let g:ctrlp_lazy_update = 200
+
+let g:limelight_priority = -1
+let g:goyo_width = 80
+let g:goyo_height = "65%"
+let g:goyo_linenr = 1

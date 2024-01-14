@@ -4,6 +4,7 @@ let g:mapleader = " "
 
 let g:nleadermap = {
     \ 'u': [':UndotreeToggle', 'undotree'],
+    \ 'z': [':Goyo', 'zen'],
     \ '~': [':Startify', 'startify'],
     \ }
 

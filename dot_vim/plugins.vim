@@ -43,6 +43,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'liuchengxu/vim-which-key'
 Plug 'junegunn/vim-peekaboo'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
 Plug 'mhinz/vim-startify'
 Plug 'ryanoasis/vim-devicons'
 
