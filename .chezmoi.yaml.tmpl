@@ -9,6 +9,5 @@ edit:
 
 data:
   githubUsername: {{ promptStringOnce . "githubUsername" "GitHub username" .chezmoi.username }}
-  graphical: {{ promptBoolOnce . "graphical" "Install graphical components (kitty, fonts, etc.)" false }}
   authorizedKeys: {{ promptBoolOnce . "authorizedKeys" "Manage SSH authorized_keys" true }}
 

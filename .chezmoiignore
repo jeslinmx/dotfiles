@@ -1,18 +1,9 @@
-{{ if not .graphical }}
-.local/share/fonts
-.config/kitty
-.config/keepassxc
-{{ end }}
-
 {{ if not .authorizedKeys }}
 .ssh/authorized_keys
 {{ end }}
 
 {{ if ne .chezmoi.os "android" }}
+.local/share/fonts
 .termux
 .hushlogin
-{{ end }}
-
-{{ if ne .chezmoi.os "windows" }}
-appdata
 {{ end }}
