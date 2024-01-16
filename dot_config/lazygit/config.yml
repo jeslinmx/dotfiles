@@ -2,6 +2,30 @@ gui:
   scrollPastBottom: false # enable scrolling past the bottom
   showBottomLine: false # for hiding the bottom information line (unless it has important information to tell you)
   nerdFontsVersion: '3'
+  border: 'rounded'
+  theme:
+    activeBorderColor:
+      - blue
+      - bold
+    inactiveBorderColor:
+      - black
+    searchingActiveBorderColor:
+      - cyan
+    optionsTextColor:
+      - magenta
+    selectedLineBgColor:
+      - reverse
+    selectedRangeBgColor:
+      - reverse
+    cherryPickedCommitBgColor:
+      - default
+    cherryPickedCommitFgColor:
+      - yellow
+      - underline
+    unstagedChangesColor:
+      - red
+    defaultFgColor:
+      - default
 git:
   log:
     # one of date-order, author-date-order, topo-order or default.
