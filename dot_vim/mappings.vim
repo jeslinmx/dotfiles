@@ -47,6 +47,8 @@ let g:nleadermap.b = {
     \ 'q': [':b#|bd#', 'quit-buffer'],
     \ 'a': [':unhide', 'all-loaded'],
     \ 'A': [':ball', 'all'],
+    \ '<Tab>': ['<Plug>lightline#bufferline#go_next_category()', 'next-category'],
+    \ '<S-Tab>': ['<Plug>lightline#bufferline#go_previous_category()', 'previous-category'],
     \ }
 
 call which_key#register('<Space>', "g:nleadermap", 'n')
@@ -56,8 +58,8 @@ nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 nnoremap s <Plug>(smalls)
 nnoremap gb :bnext<CR>
 nnoremap gB :bNext<CR>
-nnoremap <Tab> :bnext<CR>
-nnoremap <S-Tab> :bNext<CR>
+nnoremap <Tab> <Plug>lightline#bufferline#go_next()
+nnoremap <S-Tab> <Plug>lightline#bufferline#go_previous()
 nnoremap <C-Tab> gt
 nnoremap <C-S-Tab> gT
 nnoremap <silent> <expr> j (v:count > 0 ? 'j' : 'gj')

@@ -73,6 +73,8 @@ let g:lightline#bufferline#buffer_number_map = {
 let g:lightline#bufferline#enable_devicons = 1
 let g:lightline#bufferline#enable_nerdfont = 1
 let g:lightline#bufferline#icon_position = 'left'
+let g:lightline#bufferline#filter_by_tabpage = 1
+let g:lightline#bufferline#buffer_filter = "LightlineBufferlineFilter"
 
 function! IconFiletype()
     return WebDevIconsGetFileTypeSymbol() . ( winwidth(0) > 70 ? ' ' . ( strlen(&filetype) ? &filetype : 'unknown' ) : '' )
@@ -105,4 +107,14 @@ function! LightlineFugitive()
     catch
     endtry
     return ''
+endfunction
+
+function LightlineBufferlineFilter(buffer)
+    let ft = getbufvar(a:buffer, "&filetype")
+    let bt = getbufvar(a:buffer, "&buftype")
+    if ft == 'netrw' || ft == 'help'
+        return ft
+    else
+        return bt != '' ? bt : 'default'
+    endif
 endfunction
