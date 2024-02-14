@@ -44,7 +44,7 @@ let g:nleadermap.w = {
 let g:nleadermap.b = {
     \ 'name': '+buf',
     \ 'n': [':enew', 'new-buffer'],
-    \ 'q': [':b#|bd#', 'quit-buffer'],
+    \ 'q': [':bw', 'quit-buffer'],
     \ 'a': [':unhide', 'all-loaded'],
     \ 'A': [':ball', 'all'],
     \ '<Tab>': ['<Plug>lightline#bufferline#go_next_category()', 'next-category'],
