@@ -10,3 +10,4 @@ aliases:
 env:
   EDITOR: vim
   PAGER: less -R
+  RIPGREP_CONFIG_PATH: ~/.ripgreprc
