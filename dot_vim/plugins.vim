@@ -22,6 +22,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'luochen1990/rainbow'
 Plug 'vim-scripts/Smooth-Scroll'
+Plug 'tinted-theming/base16-vim'
 
 " LSP/code completion/formatting
 Plug 'prabirshrestha/vim-lsp'
