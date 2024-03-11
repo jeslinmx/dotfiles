@@ -2,7 +2,12 @@
 .ssh/authorized_keys
 {{ end }}
 
+{{ if eq .chezmoi.osRelease.id "nixos" }}
+.ssh/config
+{{ end }}
+
 {{ if ne .chezmoi.os "android" }}
+.ssh/config.d/tergent.conf
 .local/share/fonts
 .termux
 .hushlogin
