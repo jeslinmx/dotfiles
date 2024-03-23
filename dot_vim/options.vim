@@ -94,3 +94,5 @@ let g:limelight_priority = -1
 let g:goyo_width = 80
 let g:goyo_height = "65%"
 let g:goyo_linenr = 1
+
+let g:tmpl_search_paths = [ '~/.vim/templates' ]

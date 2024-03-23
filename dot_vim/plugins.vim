@@ -17,6 +17,7 @@ Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'mbbill/undotree'
 Plug 'chrisbra/Recover.vim'
 Plug 'tpope/vim-unimpaired'
+Plug 'tibabit/vim-templates'
 
 " Editor visuals
 Plug 'gorodinskiy/vim-coloresque'
