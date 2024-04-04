@@ -45,10 +45,32 @@ let g:nleadermap.b = {
     \ 'name': '+buf',
     \ 'n': [':enew', 'new-buffer'],
     \ 'q': [':bw', 'quit-buffer'],
+    \ 'Q': [':bw!', 'quit-buffer'],
     \ 'a': [':unhide', 'all-loaded'],
     \ 'A': [':ball', 'all'],
     \ '<Tab>': ['<Plug>lightline#bufferline#go_next_category()', 'next-category'],
     \ '<S-Tab>': ['<Plug>lightline#bufferline#go_previous_category()', 'previous-category'],
+    \ }
+
+let g:nleadermap.f = {
+    \ 'name': '+find',
+    \ 'f': [':Files', 'files'],
+    \ 'g': [':GFiles?', 'git-changed-files'],
+    \ 'G': [':GFiles', 'git-all-files'],
+    \ 'c': [':BCommits', 'commits-current-buffer'],
+    \ 'C': [':Commits', 'commits-all'],
+    \ 'r': [':RG', 'ripgrep'],
+    \ 'l': [':Lines', 'lines'],
+    \ 'b': [':Buffers', 'buffers'],
+    \ 'w': [':Windows', 'windows'],
+    \ 'm': [':Marks', 'marks'],
+    \ 'j': [':Jumps', 'jumps'],
+    \ 'u': [':Changes', 'undo-history'],
+    \ 'h': [':History', 'file-history'],
+    \ ':': [':History:', ':-history'],
+    \ '/': [':History/', '/-history'],
+    \ 'v': [':Commands', 'vim-commands'],
+    \ '?': [':Helptags', 'help'],
     \ }
 
 call which_key#register('<Space>', "g:nleadermap", 'n')
