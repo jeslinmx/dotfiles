@@ -40,7 +40,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/ZoomWin'
-Plug 'junegunn/fzf.vim'
+Plug 'Donaldttt/fuzzyy'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'liuchengxu/vim-which-key'

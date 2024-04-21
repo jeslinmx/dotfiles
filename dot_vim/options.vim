@@ -96,3 +96,5 @@ let g:goyo_height = "65%"
 let g:goyo_linenr = 1
 
 let g:tmpl_search_paths = [ '~/.vim/templates' ]
+
+let g:enable_fuzzyy_keymaps = 0
