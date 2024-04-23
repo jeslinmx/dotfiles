@@ -45,3 +45,5 @@
         insteadOf = gist://
 [url "git@github.com:"]
 	insteadOf = gh:
+[core]
+	autocrlf = true
