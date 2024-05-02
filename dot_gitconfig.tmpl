@@ -46,4 +46,4 @@
 [url "git@github.com:"]
 	insteadOf = gh:
 [core]
-	autocrlf = true
+	autocrlf = {{ if eq .chezmoi.os "windows" -}} true {{- else -}} input {{- end }}
