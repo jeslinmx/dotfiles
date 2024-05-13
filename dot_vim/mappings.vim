@@ -30,7 +30,7 @@ let g:nleadermap.t = {
 
 let g:nleadermap.w = {
     \ 'name': '+win',
-    \ 'h': [':execute "let prev_splitright = &splitright" | set nosplitright | execute "vsplit" | execute "let &splitright = prev_splitright"', 'split-left'],
+    \ 'h': [':execute "let prev_splitright = &splitr,ght" | set nosplitright | execute "vsplit" | execute "let &splitright = prev_splitright"', 'split-left'],
     \ 'j': [':execute "let prev_splitbelow = &splitbelow" | set splitbelow   | execute "split"  | execute "let &splitbelow = prev_splitbelow"', 'split-below'],
     \ 'k': [':execute "let prev_splitbelow = &splitbelow" | set nosplitbelow | execute "split"  | execute "let &splitbelow = prev_splitbelow"', 'split-above'],
     \ 'l': [':execute "let prev_splitright = &splitright" | set splitright   | execute "vsplit" | execute "let &splitright = prev_splitright"', 'split-right'],
@@ -63,17 +63,39 @@ let g:nleadermap.f = {
     \ '?': [':FuzzyHelps', 'help'],
     \ }
 
+let g:nleadermap.l = {
+    \ 'name': '+lsp',
+    \ 'a': ['<plug>(lsp-code-action)', 'actions'],
+    \ 'l': ['<plug>(lsp-code-lens)', 'lens'],
+    \ 'f': ['<plug>(lsp-document-format)', 'format'],
+    \ 'c': ['<plug>(lsp-rename)', 'rename'],
+    \ 'd': ['<plug>(lsp-document-diagnostics)', 'diagnostics'],
+    \ 's': ['<plug>(lsp-document-symbol)', 'symbols'],
+    \ 't': ['<plug>(lsp-type-hierarchy)', 'type-hierarchy'],
+    \ 'S': ['<plug>(lsp-workspace-symbol)', 'workspace-symbols'],
+    \ 'r': ['<plug>(lsp-references)', 'references'],
+    \ }
+
 call which_key#register('<Space>', "g:nleadermap", 'n')
 
 " Mappings
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
-nnoremap s <Plug>(smalls)
+
 nnoremap gb :bnext<CR>
 nnoremap gB :bNext<CR>
 nnoremap <Tab> <Plug>lightline#bufferline#go_next()
 nnoremap <S-Tab> <Plug>lightline#bufferline#go_previous()
-nnoremap <C-Tab> gt
-nnoremap <C-S-Tab> gT
+
+nnoremap ,, <plug>(lsp-hover)
+nnoremap ,d <plug>(lsp-definition)
+nnoremap ,D <plug>(lsp-declaration)
+nnoremap ,i <plug>(lsp-implementation)
+nnoremap ,t <plug>(lsp-type-definition)
+nnoremap ,[ <plug>(lsp-previous-diagnostic)
+nnoremap ,] <plug>(lsp-next-diagnostic)
+nnoremap <expr><c-f> lsp#scroll(+4)
+nnoremap <expr><c-d> lsp#scroll(-4)
+
 nnoremap <silent> <expr> j (v:count > 0 ? 'j' : 'gj')
 nnoremap <silent> <expr> k (v:count > 0 ? 'k' : 'gk')
 vnoremap <silent> <expr> j (v:count > 0 ? 'j' : 'gj')
