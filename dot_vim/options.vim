@@ -98,3 +98,5 @@ let g:goyo_linenr = 1
 let g:tmpl_search_paths = [ '~/.vim/templates' ]
 
 let g:enable_fuzzyy_keymaps = 0
+
+let g:easyjump_two_chars = 1
