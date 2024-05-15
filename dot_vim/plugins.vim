@@ -43,6 +43,7 @@ Plug 'vim-scripts/ZoomWin' " hide all but current window
 Plug 'Donaldttt/fuzzyy'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
+Plug 'moll/vim-bbye' " delete buffers without closing windows
 Plug 'liuchengxu/vim-which-key'
 Plug 'junegunn/vim-peekaboo' " preview registers
 Plug 'junegunn/goyo.vim' " zen mode
